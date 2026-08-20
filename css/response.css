@@ -1,0 +1,847 @@
+/* =========================================================
+   AGRISENSE
+   RESPONSIVE.CSS
+   Mobile + Tablet + Desktop Optimization
+   ========================================================= */
+
+
+/* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+   1200px and below
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .container,
+    .nav-container {
+        width: 92%;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+    }
+
+    .features-grid {
+        gap: 18px;
+    }
+
+    .team-grid {
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   1000px and below
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* -----------------------------------------
+       NAVBAR
+    ----------------------------------------- */
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        padding: 80px 0 75px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero p {
+        max-width: 600px;
+        font-size: 17px;
+    }
+
+    /* -----------------------------------------
+       FEATURES
+    ----------------------------------------- */
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* -----------------------------------------
+       DASHBOARD
+    ----------------------------------------- */
+
+    .prediction-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-full {
+        grid-column: 1 / -1;
+    }
+
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* -----------------------------------------
+       TEAM
+    ----------------------------------------- */
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .about-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   760px and below
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* -----------------------------------------
+       GLOBAL
+    ----------------------------------------- */
+
+    .container {
+        width: 91%;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+
+    /* -----------------------------------------
+       NAVBAR
+    ----------------------------------------- */
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-container {
+        width: 91%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 22px 5%;
+
+        background: rgba(255, 255, 255, 0.98);
+
+        backdrop-filter: blur(15px);
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+        border-bottom: 1px solid var(--border);
+
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 7px 0;
+    }
+
+    .nav-links a::after {
+        bottom: 0;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        padding: 70px 0 60px;
+
+        text-align: left;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 9vw, 54px);
+
+        letter-spacing: -1.8px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-badge {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------
+       BUTTONS
+    ----------------------------------------- */
+
+    .hero-buttons {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
+    }
+
+
+    /* -----------------------------------------
+       FEATURES
+    ----------------------------------------- */
+
+    .features-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+
+    /* -----------------------------------------
+       SECTION HEADER
+    ----------------------------------------- */
+
+    .section-header {
+        margin-bottom: 35px;
+    }
+
+    .section-header h2 {
+        font-size: 34px;
+    }
+
+    .section-header p {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------
+       DASHBOARD
+    ----------------------------------------- */
+
+    .dashboard-card {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .dashboard-title h3 {
+        font-size: 20px;
+    }
+
+    .prediction-form {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .form-full {
+        grid-column: auto;
+    }
+
+
+    /* -----------------------------------------
+       RESULT
+    ----------------------------------------- */
+
+    .result-main {
+        grid-template-columns: 1fr;
+    }
+
+    .result-title {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+
+    /* -----------------------------------------
+       TEAM
+    ----------------------------------------- */
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .team-card {
+        padding: 24px 15px;
+    }
+
+    .team-image {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .about-visual {
+        min-height: 280px;
+
+        order: -1;
+    }
+
+    .about-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-circle::after {
+        font-size: 55px;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   560px and below
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    /* -----------------------------------------
+       GLOBAL
+    ----------------------------------------- */
+
+    .container {
+        width: 90%;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+    ----------------------------------------- */
+
+    .logo {
+        font-size: 18px;
+
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 37px;
+        height: 37px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        padding: 60px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.3px;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
+
+    .section-header h2 {
+        font-size: 29px;
+    }
+
+    .section-header p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       FEATURES
+    ----------------------------------------- */
+
+    .feature-card {
+        padding: 22px;
+    }
+
+    .feature-card h3 {
+        font-size: 17px;
+    }
+
+    .feature-card p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       DASHBOARD
+    ----------------------------------------- */
+
+    .dashboard-card {
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+    .dashboard-title h3 {
+        font-size: 18px;
+    }
+
+    .dashboard-title p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------
+       FORM
+    ----------------------------------------- */
+
+    .prediction-form {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+    .form-submit .btn {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       RESULT
+    ----------------------------------------- */
+
+    .result-card {
+        padding: 18px;
+    }
+
+    .result-box {
+        padding: 16px;
+    }
+
+    .result-box strong {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------
+       STATS
+    ----------------------------------------- */
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card span {
+        font-size: 11px;
+    }
+
+    .stat-card strong {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------
+       TEAM
+    ----------------------------------------- */
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .team-card {
+        padding: 20px 10px;
+
+        border-radius: 16px;
+    }
+
+    .team-image {
+        width: 75px;
+        height: 75px;
+
+        border-width: 3px;
+    }
+
+    .team-card h3 {
+        font-size: 14px;
+    }
+
+    .team-card p {
+        font-size: 11px;
+    }
+
+    .team-role {
+        font-size: 9px;
+
+        padding: 4px 8px;
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .about-list li {
+        font-size: 13px;
+    }
+
+    .about-visual {
+        min-height: 230px;
+    }
+
+    .about-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer {
+        padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .footer-brand p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       TABLE
+    ----------------------------------------- */
+
+    .table-wrapper {
+        margin-left: -5px;
+
+        width: calc(100% + 10px);
+    }
+
+    .data-table {
+        min-width: 550px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   400px and below
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+
+        padding: 7px 11px;
+    }
+
+    .section-header h2 {
+        font-size: 27px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .team-image {
+        width: 68px;
+        height: 68px;
+    }
+
+    .team-card h3 {
+        font-size: 13px;
+    }
+
+    .team-card p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   350px and below
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: 22px;
+    }
+
+    .team-image {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .feature-card:hover,
+    .team-card:hover,
+    .stat-card:hover {
+        transform: none;
+
+        box-shadow: var(--shadow-sm);
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}

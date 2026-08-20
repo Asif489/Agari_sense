@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AgriSense | Live Demo</title>
+
+    <meta
+        name="description"
+        content="AgriSense live agricultural decision-support demonstration."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/demo.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="demo-header">
+
+    <div class="demo-container nav-container">
+
+
+        <a
+            href="index.html"
+            class="demo-brand"
+        >
+
+            <img
+                src="assets/logo.png"
+                alt="AgriSense"
+            >
+
+            <span>
+                Agri<span>Sense</span>
+            </span>
+
+        </a>
+
+
+        <nav class="demo-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="index.html#platform"
+            >
+                Platform
+            </a>
+
+            <a
+                href="index.html#methodology"
+            >
+                Methodology
+            </a>
+
+            <a
+                href="index.html#team"
+            >
+                Team
+            </a>
+
+        </nav>
+
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Website
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     DEMO HERO
+===================================================== -->
+
+<section class="demo-hero">
+
+    <div class="demo-glow demo-glow-one"></div>
+
+    <div class="demo-glow demo-glow-two"></div>
+
+
+    <div class="demo-container">
+
+
+        <div class="demo-hero-content">
+
+
+            <div class="demo-label">
+
+                <span></span>
+
+                AGRISENSE LIVE DEMONSTRATION
+
+            </div>
+
+
+            <h1>
+
+                Test the
+                <span>decision workflow.</span>
+
+            </h1>
+
+
+            <p>
+
+                Provide a set of agricultural conditions
+                and explore how AgriSense can combine
+                different factors to generate a crop
+                recommendation and supporting insights.
+
+            </p>
+
+
+            <div class="demo-info">
+
+                <div>
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    Crop Recommendation
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Yield Analysis
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-cloud-sun"></i>
+
+                    Climate Risk
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    Sustainability
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INPUT WORKSPACE
+===================================================== -->
+
+<section class="demo-workspace">
+
+    <div class="demo-container">
+
+
+        <div class="workspace-grid">
+
+
+            <!-- INPUT -->
+
+            <div class="input-panel">
+
+
+                <div class="panel-heading">
+
+
+                    <div>
+
+                        <span class="step-label">
+                            STEP 01
+                        </span>
+
+                        <h2>
+                            Agricultural Conditions
+                        </h2>
+
+                    </div>
+
+
+                    <div class="panel-icon">
+
+                        <i class="fa-solid fa-sliders"></i>
+
+                    </div>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Enter representative field conditions
+                    to run the demonstration.
+
+                </p>
+
+
+
+                <form
+                    class="demo-form"
+                    id="demoForm"
+                >
+
+
+                    <!-- SOIL -->
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-mountain-sun"></i>
+
+                        Soil Conditions
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="nitrogen">
+                                Nitrogen (N)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="nitrogen"
+                                name="nitrogen"
+                                placeholder="e.g. 90"
+                                min="0"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="phosphorus">
+                                Phosphorus (P)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="phosphorus"
+                                name="phosphorus"
+                                placeholder="e.g. 42"
+                                min="0"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="potassium">
+                                Potassium (K)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="potassium"
+                                name="potassium"
+                                placeholder="e.g. 43"
+                                min="0"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="ph">
+                                Soil pH
+                            </label>
+
+                            <input
+                                type="number"
+                                id="ph"
+                                name="ph"
+                                placeholder="e.g. 6.5"
+                                min="0"
+                                max="14"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ENVIRONMENT -->
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-cloud-sun"></i>
+
+                        Environmental Conditions
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="temperature">
+                                Temperature (°C)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="temperature"
+                                name="temperature"
+                                placeholder="e.g. 25"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="humidity">
+                                Humidity (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="humidity"
+                                name="humidity"
+                                placeholder="e.g. 75"
+                                min="0"
+                                max="100"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="rainfall">
+                                Rainfall (mm)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="rainfall"
+                                name="rainfall"
+                                placeholder="e.g. 200"
+                                min="0"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="season">
+                                Season
+                            </label>
+
+                            <select
+                                id="season"
+                                name="season"
+                                required
+                            >
+
+                                <option value="">
+                                    Select season
+                                </option>
+
+                                <option value="kharif">
+                                    Kharif
+                                </option>
+
+                                <option value="rabi">
+                                    Rabi
+                                </option>
+
+                                <option value="summer">
+                                    Summer
+                                </option>
+
+                                <option value="winter">
+                                    Winter
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Location & Crop Context
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label for="location">
+                                Region
+                            </label>
+
+                            <select
+                                id="location"
+                                name="location"
+                            >
+
+                                <option value="">
+                                    Select region
+                                </option>
+
+                                <option value="central">
+                                    Central Bangladesh
+                                </option>
+
+                                <option value="north">
+                                    Northern Bangladesh
+                                </option>
+
+                                <option value="south">
+                                    Southern Bangladesh
+                                </option>
+
+                                <option value="east">
+                                    Eastern Bangladesh
+                                </option>
+
+                                <option value="west">
+                                    Western Bangladesh
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="water">
+                                Water Availability
+                            </label>
+
+                            <select
+                                id="water"
+                                name="water"
+                            >
+
+                                <option value="">
+                                    Select availability
+                                </option>
+
+                                <option value="low">
+                                    Low
+                                </option>
+
+                                <option value="medium">
+                                    Moderate
+                                </option>
+
+                                <option value="high">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="analyze-button"
+                        id="analyzeButton"
+                    >
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Analyze Conditions
+
+                    </button>
+
+
+                    <div class="demo-disclaimer">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+
+                            This page currently demonstrates
+                            the decision interface. The trained
+                            machine learning model can be connected
+                            to this interface through the backend.
+
+                        </span>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- EXAMPLE -->
+
+            <aside class="example-panel">
+
+
+                <span class="example-badge">
+
+                    <i class="fa-solid fa-flask"></i>
+
+                    DEMO EXAMPLE
+
+                </span>
+
+
+                <h3>
+                    Try a sample case
+                </h3>
+
+
+                <p>
+
+                    These values can be used to demonstrate
+                    the interface during your presentation.
+
+                </p>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Nitrogen
+                    </span>
+
+                    <strong>
+                        90
+                    </strong>
+
+                </div>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Phosphorus
+                    </span>
+
+                    <strong>
+                        42
+                    </strong>
+
+                </div>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Potassium
+                    </span>
+
+                    <strong>
+                        43
+                    </strong>
+
+                </div>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Soil pH
+                    </span>
+
+                    <strong>
+                        6.5
+                    </strong>
+
+                </div>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Temperature
+                    </span>
+
+                    <strong>
+                        25°C
+                    </strong>
+
+                </div>
+
+
+                <div class="example-item">
+
+                    <span>
+                        Humidity
+                    </span>
+
+                    <strong>
+                        75%
+                    </strong>
+
+                </div>
+
+
+                <div class="example-footer">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <span>
+
+                        Use the sample values to show how
+                        the complete decision workflow works.
+
+                    </span>
+
+                </div>
+
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<section
+    class="analysis-loading"
+    id="analysisLoading"
+>
+
+    <div class="demo-container">
+
+        <div class="loader-circle">
+
+            <i class="fa-solid fa-leaf"></i>
+
+        </div>
+
+
+        <h3>
+            Analyzing agricultural conditions
+        </h3>
+
+
+        <p>
+            Combining input factors and preparing
+            the decision output...
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTS
+===================================================== -->
+
+<section
+    class="results-section"
+    id="results"
+>
+
+    <div class="demo-container">
+
+
+        <div class="results-heading">
+
+            <div>
+
+                <div class="demo-label">
+
+                    <span></span>
+
+                    ANALYSIS RESULT
+
+                </div>
+
+                <h2>
+
+                    Recommended
+                    <span>decision.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                The result summarizes the model decision
+                together with supporting agricultural
+                indicators.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- MAIN RESULT -->
+
+        <div class="main-result-card">
+
+
+            <div class="result-main">
+
+
+                <div class="result-rank">
+                    #1
+                </div>
+
+
+                <div class="result-crop-icon">
+
+                    <i class="fa-solid fa-wheat-awn"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="result-small-title">
+                        RECOMMENDED CROP
+                    </span>
+
+                    <h3 id="recommendedCrop">
+                        Rice
+                    </h3>
+
+                    <p id="recommendationText">
+                        Strong overall suitability
+                        under the provided conditions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-score">
+
+                <span>
+                    Suitability
+                </span>
+
+                <strong id="suitabilityScore">
+                    92%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- METRICS -->
+
+        <div class="result-metrics">
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <span>
+                    Estimated Yield
+                </span>
+
+                <strong id="yieldValue">
+                    4.8 t/ha
+                </strong>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+                <span>
+                    Soil Suitability
+                </span>
+
+                <strong id="soilSuitability">
+                    High
+                </strong>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+
+                    <i class="fa-solid fa-cloud-sun"></i>
+
+                </div>
+
+                <span>
+                    Climate Risk
+                </span>
+
+                <strong
+                    class="risk-low"
+                    id="climateRisk"
+                >
+                    Low
+                </strong>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <span>
+                    Sustainability
+                </span>
+
+                <strong id="sustainabilityScore">
+                    87%
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- LOWER RESULTS -->
+
+        <div class="results-grid">
+
+
+            <!-- ALTERNATIVES -->
+
+            <div class="alternative-panel">
+
+
+                <div class="result-panel-heading">
+
+                    <div>
+
+                        <span>
+                            ALTERNATIVES
+                        </span>
+
+                        <h3>
+                            Other suitable crops
+                        </h3>
+
+                    </div>
+
+                    <i class="fa-solid fa-list-ol"></i>
+
+                </div>
+
+
+                <div class="alternative-row">
+
+
+                    <div>
+
+                        <span class="alternative-rank">
+                            02
+                        </span>
+
+                        <strong>
+                            Maize
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            84%
+                        </strong>
+
+                        <small>
+                            suitability
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alternative-row">
+
+
+                    <div>
+
+                        <span class="alternative-rank">
+                            03
+                        </span>
+
+                        <strong>
+                            Wheat
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            79%
+                        </strong>
+
+                        <small>
+                            suitability
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alternative-row">
+
+
+                    <div>
+
+                        <span class="alternative-rank">
+                            04
+                        </span>
+
+                        <strong>
+                            Potato
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            74%
+                        </strong>
+
+                        <small>
+                            suitability
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INSIGHT -->
+
+            <div class="insight-panel">
+
+
+                <div class="result-panel-heading">
+
+                    <div>
+
+                        <span>
+                            MODEL INSIGHT
+                        </span>
+
+                        <h3>
+                            Why this recommendation?
+                        </h3>
+
+                    </div>
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+
+                <p id="insightText">
+
+                    The recommended crop shows strong
+                    compatibility with the provided soil
+                    nutrients, pH and environmental
+                    conditions. The combination of these
+                    factors contributes to the higher
+                    suitability score.
+
+                </p>
+
+
+                <div class="insight-points">
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Suitable soil condition
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Favorable temperature range
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Adequate moisture condition
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Lower estimated production risk
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="result-actions">
+
+
+            <button
+                type="button"
+                class="secondary-demo-button"
+                id="editInputs"
+            >
+
+                <i class="fa-solid fa-pen"></i>
+
+                Modify Inputs
+
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-demo-button"
+                id="runAgain"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Run Again
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="how-section">
+
+    <div class="demo-container">
+
+
+        <div class="how-heading">
+
+            <div class="demo-label">
+
+                <span></span>
+
+                DECISION PROCESS
+
+            </div>
+
+
+            <h2>
+
+                How the demo
+                <span>works.</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="how-grid">
+
+
+            <article class="how-card">
+
+                <span>
+                    01
+                </span>
+
+                <i class="fa-solid fa-keyboard"></i>
+
+                <h3>
+                    Enter Conditions
+                </h3>
+
+                <p>
+
+                    Provide soil and environmental
+                    information through the input form.
+
+                </p>
+
+            </article>
+
+
+            <article class="how-card">
+
+                <span>
+                    02
+                </span>
+
+                <i class="fa-solid fa-gears"></i>
+
+                <h3>
+                    Process Data
+                </h3>
+
+                <p>
+
+                    The backend prepares the submitted
+                    features for the trained models.
+
+                </p>
+
+            </article>
+
+
+            <article class="how-card">
+
+                <span>
+                    03
+                </span>
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>
+                    Generate Prediction
+                </h3>
+
+                <p>
+
+                    The connected model produces
+                    recommendations and predictions.
+
+                </p>
+
+            </article>
+
+
+            <article class="how-card">
+
+                <span>
+                    04
+                </span>
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+                <h3>
+                    View Decision
+                </h3>
+
+                <p>
+
+                    Results are presented through a
+                    simple agricultural decision dashboard.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="demo-footer">
+
+    <div class="demo-container footer-inner">
+
+
+        <a
+            href="index.html"
+            class="demo-brand"
+        >
+
+            <img
+                src="assets/logo.png"
+                alt="AgriSense"
+            >
+
+            <span>
+                Agri<span>Sense</span>
+            </span>
+
+        </a>
+
+
+        <p>
+            AI-powered agricultural decision support.
+        </p>
+
+
+        <a href="index.html">
+            Back to AgriSense
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<script src="js/demo.js"></script>
+
+</body>
+
+</html>
