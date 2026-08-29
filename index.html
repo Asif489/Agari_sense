@@ -10,30 +10,47 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        AgriSense | AI-Powered Agricultural Intelligence
-    </title>
-
     <meta
         name="description"
-        content="AgriSense is an AI-powered agricultural decision-support platform for crop recommendation, yield analysis, climate risk assessment and sustainable agriculture."
+        content="AgriSense - An Explainable AI Framework for Sustainable Agricultural Decision Support"
     >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>AgriSense AI | Agricultural Decision Support</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+         ===================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
 
     <link
         rel="stylesheet"
         href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/response.css"
     >
 
 </head>
@@ -42,1211 +59,95 @@
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<header class="site-header">
+    <header class="site-header">
 
-    <div class="container nav-container">
 
-        <a
-            href="#home"
-            class="brand"
-        >
+        <!-- LOGO -->
 
-            <img
-                src="assets/logo.png"
-                alt="AgriSense"
-                class="brand-logo"
-            >
+        <div class="header-logo">
 
-            <span class="brand-name">
-                Agri<span>Sense</span>
+            <a href="index.html">
+
+                <img
+                    src="assets/logo.png"
+                    alt="AgriSense Logo"
+                >
+
+            </a>
+
+        </div>
+
+
+        <!-- RESEARCH TITLE -->
+
+        <div class="research-title">
+
+            <span class="research-label">
+                RESEARCH PROJECT
             </span>
 
-        </a>
-
-
-        <nav class="navigation">
-
-            <a
-                href="#home"
-                class="active"
-            >
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#platform">
-                Platform
-            </a>
-
-            <a href="#methodology">
-                Methodology
-            </a>
-
-            <a href="#team">
-                Team
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <a
-            href="live-demo.html"
-            class="nav-demo-btn"
-        >
-
-            Live Demo
-
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <button
-            class="menu-button"
-            id="menuButton"
-            type="button"
-            aria-label="Open menu"
-        >
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-    </div>
-
-</header>
-
-
-
-<main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section
-    class="hero"
-    id="home"
->
-
-    <div class="hero-background"></div>
-
-    <div class="hero-glow hero-glow-one"></div>
-
-    <div class="hero-glow hero-glow-two"></div>
-
-
-    <div class="container hero-container">
-
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-
-                <span class="eyebrow-dot"></span>
-
-                AI FOR SUSTAINABLE AGRICULTURE
-
-            </div>
-
-
             <h1>
-
-                Smarter decisions
-
-                <span>
-                    for better harvests.
-                </span>
-
+                An Explainable AI Framework for
+                Sustainable Agricultural Decision Support
             </h1>
 
-
-            <p class="hero-description">
-
-                AgriSense is an AI-powered agricultural
-                decision-support platform that brings together
-                soil, climate, environmental and agricultural
-                data to help identify suitable crops, estimate
-                yield and understand production risks.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="live-demo.html"
-                    class="primary-btn"
-                >
-
-                    Explore Live Demo
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-
-                <a
-                    href="#platform"
-                    class="secondary-btn"
-                >
-
-                    Explore Platform
-
-                </a>
-
-            </div>
-
-
-            <div class="hero-note">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                Research-oriented AI decision support
-
-            </div>
-
-        </div>
-
-
-
-        <div class="hero-visual">
-
-            <div class="hero-image-card">
-
-                <div class="hero-image-overlay"></div>
-
-
-                <div class="hero-image-content">
-
-                    <span>
-                        AGRICULTURAL INTELLIGENCE
-                    </span>
-
-                    <strong>
-                        Data → Analysis → Decision
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-card floating-card-one">
-
-                <div class="floating-icon">
-
-                    <i class="fa-solid fa-seedling"></i>
-
-                </div>
-
-                <div>
-
-                    <small>
-                        CROP INSIGHT
-                    </small>
-
-                    <strong>
-                        Suitability Analysis
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-card floating-card-two">
-
-                <div class="floating-icon">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
-
-                <div>
-
-                    <small>
-                        PREDICTION
-                    </small>
-
-                    <strong>
-                        Yield Estimation
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-bottom">
-
-        <i class="fa-solid fa-circle"></i>
-
-        INTEGRATING AGRICULTURAL DATA WITH AI
-
-        <i class="fa-solid fa-circle"></i>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="section about"
-    id="about"
->
-
-    <div class="container">
-
-        <div class="section-intro">
-
-            <div>
-
-                <div class="section-label">
-                    ABOUT AGRISENSE
-                </div>
-
-                <h2>
-
-                    Agriculture needs
-
-                    <span>
-                        better information.
-                    </span>
-
-                </h2>
-
-            </div>
-
-
             <p>
-
-                Agricultural decisions are influenced by
-                multiple interacting factors. AgriSense is
-                designed to bring these factors together into
-                a single decision-support workflow rather than
-                relying on one isolated measurement.
-
+                DATA • INSIGHT • BETTER HARVESTS
             </p>
 
         </div>
 
 
+        <!-- DEMO BUTTON -->
 
-        <div class="about-grid">
-
-            <article class="about-card">
-
-                <span class="card-number">
-                    01
-                </span>
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-database"></i>
-
-                </div>
-
-                <h3>
-                    Multiple Data Sources
-                </h3>
-
-                <p>
-
-                    Soil, weather, environmental and
-                    agricultural information can be combined
-                    to create a broader view of field conditions.
-
-                </p>
-
-            </article>
-
-
-            <article class="about-card">
-
-                <span class="card-number">
-                    02
-                </span>
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-brain"></i>
-
-                </div>
-
-                <h3>
-                    AI-Based Analysis
-                </h3>
-
-                <p>
-
-                    Machine learning models can transform
-                    the collected information into predictions,
-                    rankings and decision-oriented insights.
-
-                </p>
-
-            </article>
-
-
-            <article class="about-card">
-
-                <span class="card-number">
-                    03
-                </span>
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                </div>
-
-                <h3>
-                    Understandable Decisions
-                </h3>
-
-                <p>
-
-                    The platform is designed to present not
-                    only a recommendation but also the factors
-                    that contribute to the decision.
-
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PLATFORM
-===================================================== -->
-
-<section
-    class="section platform"
-    id="platform"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                PLATFORM
-            </div>
-
-            <h2>
-
-                From agricultural data
-
-                <span>
-                    to useful decisions.
-                </span>
-
-            </h2>
-
-            <p>
-
-                AgriSense is structured as a modular
-                decision-support system. Individual models
-                can be trained and connected to the platform
-                through the backend.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="platform-grid">
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    01
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-leaf"></i>
-
-                </div>
-
-                <h3>
-                    Crop Recommendation
-                </h3>
-
-                <p>
-
-                    Identifies crops that are more suitable
-                    for the provided soil, climate and
-                    seasonal conditions.
-
-                </p>
-
-                <span class="platform-link">
-                    AI MODULE
-                </span>
-
-            </article>
-
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    02
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-chart-column"></i>
-
-                </div>
-
-                <h3>
-                    Yield Estimation
-                </h3>
-
-                <p>
-
-                    Estimates potential agricultural yield
-                    using relevant environmental and
-                    production-related variables.
-
-                </p>
-
-                <span class="platform-link">
-                    PREDICTION MODULE
-                </span>
-
-            </article>
-
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    03
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-cloud-sun"></i>
-
-                </div>
-
-                <h3>
-                    Climate Risk
-                </h3>
-
-                <p>
-
-                    Examines environmental conditions that
-                    may influence agricultural production
-                    and seasonal suitability.
-
-                </p>
-
-                <span class="platform-link">
-                    RISK MODULE
-                </span>
-
-            </article>
-
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    04
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-mountain-sun"></i>
-
-                </div>
-
-                <h3>
-                    Soil Assessment
-                </h3>
-
-                <p>
-
-                    Uses soil-related characteristics to
-                    support crop suitability and agricultural
-                    condition analysis.
-
-                </p>
-
-                <span class="platform-link">
-                    SOIL MODULE
-                </span>
-
-            </article>
-
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    05
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-chart-pie"></i>
-
-                </div>
-
-                <h3>
-                    Sustainability Analysis
-                </h3>
-
-                <p>
-
-                    Provides an additional perspective on
-                    agricultural decisions through resource
-                    and sustainability-oriented indicators.
-
-                </p>
-
-                <span class="platform-link">
-                    ANALYTICS MODULE
-                </span>
-
-            </article>
-
-
-
-            <article class="platform-card">
-
-                <span class="platform-number">
-                    06
-                </span>
-
-                <div class="platform-icon">
-
-                    <i class="fa-solid fa-diagram-project"></i>
-
-                </div>
-
-                <h3>
-                    Integrated Decision
-                </h3>
-
-                <p>
-
-                    Combines outputs from different analytical
-                    modules into a single decision-oriented
-                    result.
-
-                </p>
-
-                <span class="platform-link">
-                    DECISION LAYER
-                </span>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     METHODOLOGY
-===================================================== -->
-
-<section
-    class="section methodology"
-    id="methodology"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                WORKFLOW
-            </div>
-
-            <h2>
-
-                A clear path from
-
-                <span>
-                    data to decision.
-                </span>
-
-            </h2>
-
-            <p>
-
-                The system follows a structured workflow
-                so that raw agricultural information can be
-                converted into model-ready features and
-                decision-oriented outputs.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="method-flow">
-
-
-            <div class="method-step">
-
-                <span class="method-number">
-                    01
-                </span>
-
-                <div class="method-icon">
-
-                    <i class="fa-solid fa-database"></i>
-
-                </div>
-
-                <h3>
-                    Data
-                </h3>
-
-                <p>
-                    Agricultural and environmental data
-                </p>
-
-            </div>
-
-
-            <div class="method-line"></div>
-
-
-            <div class="method-step">
-
-                <span class="method-number">
-                    02
-                </span>
-
-                <div class="method-icon">
-
-                    <i class="fa-solid fa-filter"></i>
-
-                </div>
-
-                <h3>
-                    Processing
-                </h3>
-
-                <p>
-                    Cleaning and feature preparation
-                </p>
-
-            </div>
-
-
-            <div class="method-line"></div>
-
-
-            <div class="method-step">
-
-                <span class="method-number">
-                    03
-                </span>
-
-                <div class="method-icon">
-
-                    <i class="fa-solid fa-microchip"></i>
-
-                </div>
-
-                <h3>
-                    AI Models
-                </h3>
-
-                <p>
-                    Prediction and classification
-                </p>
-
-            </div>
-
-
-            <div class="method-line"></div>
-
-
-            <div class="method-step">
-
-                <span class="method-number">
-                    04
-                </span>
-
-                <div class="method-icon">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
-
-                <h3>
-                    Analysis
-                </h3>
-
-                <p>
-                    Compare and interpret outputs
-                </p>
-
-            </div>
-
-
-            <div class="method-line"></div>
-
-
-            <div class="method-step">
-
-                <span class="method-number">
-                    05
-                </span>
-
-                <div class="method-icon">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                </div>
-
-                <h3>
-                    Decision
-                </h3>
-
-                <p>
-                    Action-oriented agricultural insight
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <div class="method-summary">
-
-            <div>
-
-                <span>
-                    INPUT
-                </span>
-
-                Agricultural Conditions
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-                <span>
-                    OUTPUT
-                </span>
-
-                Decision Support
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     LIVE DEMO CTA
-===================================================== -->
-
-<section class="demo-cta">
-
-    <div class="container">
-
-        <div class="demo-cta-box">
-
-            <div class="demo-cta-content">
-
-                <div class="section-label">
-                    LIVE DEMONSTRATION
-                </div>
-
-                <h2>
-
-                    See how AgriSense
-
-                    <span>
-                        makes a decision.
-                    </span>
-
-                </h2>
-
-                <p>
-
-                    Enter sample agricultural conditions
-                    and explore the complete decision workflow.
-                    The interface is designed to connect with
-                    the trained backend models.
-
-                </p>
-
-            </div>
-
+        <div class="header-action">
 
             <a
                 href="live-demo.html"
-                class="primary-btn light-btn"
+                class="demo-btn"
             >
 
-                Open Live Demo
+                <span>↗</span>
 
-                <i class="fa-solid fa-arrow-right"></i>
+                Live Demo
 
             </a>
 
         </div>
 
-    </div>
+    </header>
 
-</section>
 
 
+    <main>
 
-<!-- =====================================================
-     TEAM
-===================================================== -->
 
-<section
-    class="section team"
-    id="team"
->
+        <!-- =================================================
+             HERO
+             ================================================= -->
 
-    <div class="container">
+        <section class="intro-section">
 
 
-        <div class="team-heading">
+            <!-- HERO CONTENT -->
 
-            <div>
+            <div class="intro-content">
 
-                <div class="section-label">
-                    OUR TEAM
-                </div>
-
-                <h2>
-
-                    The people behind
-
-                    <span>
-                        AgriSense.
-                    </span>
-
-                </h2>
-
-            </div>
-
-
-            <p>
-
-                A collaborative team working across
-                artificial intelligence, machine learning,
-                agricultural analytics and software
-                development.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="team-carousel">
-
-
-            <button
-                class="team-arrow team-prev"
-                id="teamPrev"
-                type="button"
-                aria-label="Previous team members"
-            >
-
-                <i class="fa-solid fa-chevron-left"></i>
-
-            </button>
-
-
-            <div class="team-window">
-
-                <div
-                    class="team-track"
-                    id="teamTrack"
-                >
-
-
-                    <!-- MEMBER 01 -->
-
-                    <article class="team-member">
-
-                        <div class="member-photo">
-
-                            <img
-                                src="assets/asif.png"
-                                alt="Asif Al Amin"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="member-info">
-
-                            <span class="member-number">
-                                01
-                            </span>
-
-                            <h3>
-                                Asif Al Amin
-                            </h3>
-
-                            <p>
-                                AI & Machine Learning
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- MEMBER 02 -->
-
-                    <article class="team-member">
-
-                        <div class="member-photo">
-
-                            <img
-                                src="assets/shakil.png"
-                                alt="Md. Shakil"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="member-info">
-
-                            <span class="member-number">
-                                02
-                            </span>
-
-                            <h3>
-                                Md. Shakil
-                            </h3>
-
-                            <p>
-                                Research & Development
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- MEMBER 03 -->
-
-                    <article class="team-member">
-
-                        <div class="member-photo">
-
-                            <img
-                                src="assets/shariar.png"
-                                alt="Md. Shariar Hossain"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="member-info">
-
-                            <span class="member-number">
-                                03
-                            </span>
-
-                            <h3>
-                                Md. Shariar Hossain
-                            </h3>
-
-                            <p>
-                                Agricultural Analytics
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- MEMBER 04 -->
-
-                    <article class="team-member">
-
-                        <div class="member-photo">
-
-                            <img
-                                src="assets/afique.png"
-                                alt="Afique Ahammed Khan Imon"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="member-info">
-
-                            <span class="member-number">
-                                04
-                            </span>
-
-                            <h3>
-                                Afique Ahammed Khan Imon
-                            </h3>
-
-                            <p>
-                                Research & Development
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- MEMBER 05 -->
-
-                    <article class="team-member">
-
-                        <div class="member-photo">
-
-                            <img
-                                src="assets/sabbir.png"
-                                alt="Md. Sabbir Hossen"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="member-info">
-
-                            <span class="member-number">
-                                05
-                            </span>
-
-                            <h3>
-                                Md. Sabbir Hossen
-                            </h3>
-
-                            <p>
-                                AI & Machine Learning
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-
-            <button
-                class="team-arrow team-next"
-                id="teamNext"
-                type="button"
-                aria-label="Next team members"
-            >
-
-                <i class="fa-solid fa-chevron-right"></i>
-
-            </button>
-
-
-        </div>
-
-
-        <div
-            class="team-dots"
-            id="teamDots"
-        ></div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    class="section contact"
-    id="contact"
->
-
-    <div class="container">
-
-        <div class="contact-grid">
-
-
-            <div class="contact-info">
-
-                <div class="section-label">
-                    CONTACT
-                </div>
+                <span class="section-label">
+                    SMART AGRICULTURAL DECISION SUPPORT
+                </span>
 
 
                 <h2>
 
-                    Let's talk about
+                    Smarter Data.
 
                     <span>
-                        AgriSense.
+                        Better Crops.
                     </span>
 
                 </h2>
@@ -1254,68 +155,39 @@
 
                 <p>
 
-                    For research collaboration, project
-                    discussion, demonstration or further
-                    information, feel free to get in touch
-                    with the team.
+                    AgriSense integrates soil, environmental,
+                    historical and agricultural indicators with
+                    AI-driven analysis to identify the most
+                    suitable crop choices for sustainable
+                    farming decisions.
 
                 </p>
 
 
-                <div class="contact-details">
-
+                <div class="intro-actions">
 
                     <a
-                        href="mailto:contact.asif.bubt@gmail.com"
-                        class="contact-item"
+                        href="live-demo.html"
+                        class="primary-btn"
                     >
 
-                        <span class="contact-icon">
+                        Explore Live Demo
 
-                            <i class="fa-solid fa-envelope"></i>
-
-                        </span>
-
-                        <span>
-
-                            <small>
-                                EMAIL
-                            </small>
-
-                            <strong>
-                                contact.asif.bubt@gmail.com
-                            </strong>
-
-                        </span>
+                        <span>→</span>
 
                     </a>
 
 
                     <a
-                        href="tel:01870923530"
-                        class="contact-item"
+                        href="#workflow"
+                        class="secondary-btn"
                     >
 
-                        <span class="contact-icon">
+                        View Methodology
 
-                            <i class="fa-solid fa-phone"></i>
-
-                        </span>
-
-                        <span>
-
-                            <small>
-                                PHONE
-                            </small>
-
-                            <strong>
-                                01870923530
-                            </strong>
-
-                        </span>
+                        <span>↓</span>
 
                     </a>
-
 
                 </div>
 
@@ -1323,46 +195,373 @@
 
 
 
-            <div class="contact-form-box">
+            <!-- =================================================
+                 HERO VISUAL
+                 ================================================= -->
 
-                <form
-                    class="contact-form"
-                    id="contactForm"
-                >
-
-                    <div class="form-row">
+            <div class="intro-visual">
 
 
-                        <div class="form-group">
+                <div class="visual-glow"></div>
 
-                            <label for="name">
-                                Name
-                            </label>
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your name"
-                                required
-                            >
+                <div class="visual-circle circle-one"></div>
+
+                <div class="visual-circle circle-two"></div>
+
+
+                <!-- CENTER LOGO -->
+
+                <div class="visual-core">
+
+                    <img
+                        src="assets/logo.png"
+                        alt="AgriSense"
+                    >
+
+                </div>
+
+
+                <!-- FLOATING CARD 01 -->
+
+                <div class="floating-card card-top">
+
+                    <span>
+                        AI
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            AI Analysis
+                        </strong>
+
+                        <small>
+                            Multi-factor assessment
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARD 02 -->
+
+                <div class="floating-card card-left">
+
+                    <span>
+                        ASI
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Sustainability
+                        </strong>
+
+                        <small>
+                            Agri Sustainability Index
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARD 03 -->
+
+                <div class="floating-card card-right">
+
+                    <span>
+                        #3
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Top 3 Crops
+                        </strong>
+
+                        <small>
+                            Ranked recommendation
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORKFLOW
+             ================================================= -->
+
+        <section
+            class="workflow-section"
+            id="workflow"
+        >
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    SYSTEM WORKFLOW
+                </span>
+
+                <h2>
+                    From Farm Data to
+                    Intelligent Decisions
+                </h2>
+
+                <p>
+                    AgriSense connects agricultural inputs,
+                    AI-based analysis and a multi-criteria
+                    decision engine into one integrated workflow.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow">
+
+
+                <!-- =================================================
+                     STEP 01
+                     ================================================= -->
+
+                <div class="workflow-card">
+
+
+                    <div class="workflow-top">
+
+                        <div class="workflow-number">
+                            STEP 01
+                        </div>
+
+                        <div class="workflow-icon">
+                            🌱
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Farm Input
+                    </h3>
+
+
+                    <p>
+                        Agricultural and environmental information
+                        is collected as the foundation for the
+                        decision process.
+                    </p>
+
+
+                    <div class="workflow-tags">
+
+                        <span>Soil</span>
+
+                        <span>Weather</span>
+
+                        <span>Location</span>
+
+                        <span>Season</span>
+
+                        <span>History</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ARROW -->
+
+                <div class="workflow-arrow">
+                    →
+                </div>
+
+
+
+                <!-- =================================================
+                     STEP 02
+                     ================================================= -->
+
+                <div class="workflow-card">
+
+
+                    <div class="workflow-top">
+
+                        <div class="workflow-number">
+                            STEP 02
+                        </div>
+
+                        <div class="workflow-icon">
+                            🧠
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        AI Analysis
+                    </h3>
+
+
+                    <p>
+                        Multiple AI-driven modules analyze the
+                        collected agricultural indicators from
+                        different perspectives.
+                    </p>
+
+
+                    <div class="analysis-list">
+
+                        <div>
+                            <span>✓</span>
+                            Crop Recommendation
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Yield Prediction
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Soil Health
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Climate Risk
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            XAI / SHAP
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Sustainability
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ARROW -->
+
+                <div class="workflow-arrow">
+                    →
+                </div>
+
+
+
+                <!-- =================================================
+                     STEP 03
+                     ================================================= -->
+
+                <div class="workflow-card decision-card">
+
+
+                    <div class="workflow-top">
+
+                        <div class="workflow-number">
+                            STEP 03
+                        </div>
+
+                        <div class="workflow-icon">
+                            ⚙
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Integrated Decision Engine
+                    </h3>
+
+
+                    <p>
+                        Outputs from multiple AI modules are
+                        combined through a multi-criteria decision
+                        framework to evaluate suitable crops.
+                    </p>
+
+
+                    <div class="decision-bars">
+
+
+                        <div>
+
+                            <span>
+                                YIELD
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
 
                         </div>
 
 
-                        <div class="form-group">
+                        <div>
 
-                            <label for="email">
-                                Email
-                            </label>
+                            <span>
+                                SOIL
+                            </span>
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your email"
-                                required
-                            >
+                            <strong>
+                                ✓
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                CLIMATE
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                ASI
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                XAI
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
 
                         </div>
 
@@ -1370,160 +569,561 @@
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="engine-result">
 
-                        <label for="subject">
-                            Subject
-                        </label>
+                        <span>
+                            DECISION OUTPUT
+                        </span>
 
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            placeholder="What would you like to discuss?"
-                            required
+                        <strong>
+                            Multi-factor Crop Ranking
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ARROW -->
+
+                <div class="workflow-arrow">
+                    →
+                </div>
+
+
+
+                <!-- =================================================
+                     STEP 04
+                     ================================================= -->
+
+                <div class="workflow-card recommendation-card">
+
+
+                    <div class="workflow-top">
+
+                        <div class="workflow-number">
+                            STEP 04
+                        </div>
+
+                        <div class="workflow-icon">
+                            🏆
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Top 3 Crop Recommendation
+                    </h3>
+
+
+                    <p>
+                        Instead of isolated predictions, the system
+                        produces a ranked set of the three most
+                        suitable crop choices.
+                    </p>
+
+
+                    <div class="ranking-preview">
+
+
+                        <div>
+
+                            <span>
+                                01
+                            </span>
+
+                            <strong>
+                                Best Crop
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                02
+                            </span>
+
+                            <strong>
+                                Alternative Crop
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                03
+                            </span>
+
+                            <strong>
+                                Sustainable Option
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTEGRATED DECISION ENGINE
+             ================================================= -->
+
+        <section class="engine-section">
+
+
+            <div class="engine-content">
+
+
+                <span class="section-label">
+                    INTEGRATED INTELLIGENCE
+                </span>
+
+
+                <h2>
+
+                    One Decision.
+
+                    <span>
+                        Multiple Insights.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    AgriSense does not depend on a single
+                    prediction. Yield, soil condition, climate
+                    risk, sustainability and other agricultural
+                    indicators are integrated before producing
+                    the final ranked recommendation.
+
+                </p>
+
+
+                <a
+                    href="live-demo.html"
+                    class="engine-btn"
+                >
+
+                    Try the Decision Engine
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ENGINE VISUAL -->
+
+            <div class="engine-visual">
+
+
+                <div class="engine-line line-one"></div>
+
+                <div class="engine-line line-two"></div>
+
+                <div class="engine-line line-three"></div>
+
+                <div class="engine-line line-four"></div>
+
+
+                <div class="engine-node node-one">
+                    Yield
+                </div>
+
+                <div class="engine-node node-two">
+                    Climate
+                </div>
+
+                <div class="engine-node node-three">
+                    Soil
+                </div>
+
+                <div class="engine-node node-four">
+                    ASI
+                </div>
+
+
+                <div class="engine-center">
+
+                    <span>
+                        AI
+                    </span>
+
+                    <strong>
+                        DECISION
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TEAM
+             ================================================= -->
+
+        <section
+            class="team-section"
+            id="team"
+        >
+
+
+            <div class="team-heading">
+
+
+                <span class="section-label">
+                    RESEARCH TEAM
+                </span>
+
+
+                <h2>
+                    Team AgriSense
+                </h2>
+
+
+                <p>
+                    A multidisciplinary research team working
+                    on AI-driven agricultural decision support.
+                </p>
+
+            </div>
+
+
+
+            <div class="team-grid">
+
+
+                <!-- =================================================
+                     MEMBER 01 — ASIF
+                     ================================================= -->
+
+                <div class="team-member">
+
+
+                    <div class="member-photo">
+
+                        <img
+                            src="assets/asif.png"
+                            alt="Asif Al Amin"
                         >
 
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="member-info">
 
-                        <label for="message">
-                            Message
-                        </label>
+                        <span>
+                            01
+                        </span>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Write your message..."
-                            required
-                        ></textarea>
+                        <h3>
+                            Asif Al Amin
+                        </h3>
+
+                        <p>
+                            AI / ML Researcher
+                        </p>
 
                     </div>
 
 
-                    <button
-                        type="submit"
-                        class="primary-btn form-submit"
-                    >
+                    <!-- HOVER DETAILS -->
 
-                        Send Message
+                    <div class="member-details">
 
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <strong>
+                            AI / ML Researcher
+                        </strong>
 
-                    </button>
+                        <p>
+                            Machine learning, predictive modeling
+                            and intelligent agricultural systems.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                </form>
+
+                <!-- =================================================
+                     MEMBER 02 — SHAKIL
+                     ================================================= -->
+
+                <div class="team-member">
+
+
+                    <div class="member-photo">
+
+                        <img
+                            src="assets/shakil.png"
+                            alt="Md. Shakil"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Md. Shakil
+                        </h3>
+
+                        <p>
+                            Designer & Developer
+                        </p>
+
+                    </div>
+
+
+                    <div class="member-details">
+
+                        <strong>
+                            Designer & Developer
+                        </strong>
+
+                        <p>
+                            User interface design, web development
+                            and system implementation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMBER 03 — AFIQUE
+                     ================================================= -->
+
+                <div class="team-member">
+
+
+                    <div class="member-photo">
+
+                        <img
+                            src="assets/afique.png"
+                            alt="Afique Ahmmed Khan Imon"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Afique Ahmmed Khan Imon
+                        </h3>
+
+                        <p>
+                            Data Analyst
+                        </p>
+
+                    </div>
+
+
+                    <div class="member-details">
+
+                        <strong>
+                            Data Analyst
+                        </strong>
+
+                        <p>
+                            Agricultural data analysis, dataset
+                            processing and analytical insights.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMBER 04 — SABBIR
+                     ================================================= -->
+
+                <div class="team-member">
+
+
+                    <div class="member-photo">
+
+                        <img
+                            src="assets/sabbir.png"
+                            alt="Sabbir Hossen"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Sabbir Hossen
+                        </h3>
+
+                        <p>
+                            AI / ML Researcher
+                        </p>
+
+                    </div>
+
+
+                    <div class="member-details">
+
+                        <strong>
+                            AI / ML Researcher
+                        </strong>
+
+                        <p>
+                            Predictive analytics, machine learning
+                            and intelligent recommendation systems.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMBER 05 — SHAHRIAR
+                     ================================================= -->
+
+                <div class="team-member">
+
+
+                    <div class="member-photo">
+
+                        <img
+                            src="assets/shariar.png"
+                            alt="Md. Shahriar Hossain"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <span>
+                            05
+                        </span>
+
+                        <h3>
+                            Md. Shahriar Hossain
+                        </h3>
+
+                        <p>
+                            R&D Researcher
+                        </p>
+
+                    </div>
+
+
+                    <div class="member-details">
+
+                        <strong>
+                            R&D Researcher
+                        </strong>
+
+                        <p>
+                            Research and development, system evaluation
+                            and agricultural AI research.
+                        </p>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
-
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
-</main>
+    </main>
 
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
-<footer class="site-footer">
-
-    <div class="container footer-main">
+    <footer class="site-footer">
 
 
-        <div class="footer-brand">
+        <div class="footer-left">
 
-            <a
-                href="#home"
-                class="brand"
-            >
+            <strong>
+                AgriSense
+            </strong>
 
-                <img
-                    src="assets/logo.png"
-                    alt="AgriSense"
-                    class="brand-logo"
-                >
-
-                <span class="brand-name">
-                    Agri<span>Sense</span>
-                </span>
-
-            </a>
-
-
-            <p>
-                AI-powered agricultural decision support.
-            </p>
+            <span>
+                AI-powered agricultural intelligence
+            </span>
 
         </div>
 
 
-        <div class="footer-links">
+        <div class="footer-center">
 
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#platform">
-                Platform
-            </a>
-
-            <a href="#methodology">
-                Methodology
-            </a>
-
-            <a href="#team">
-                Team
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
+            An Explainable AI Framework for
+            Sustainable Agricultural Decision Support
 
         </div>
 
 
-        <a
-            href="live-demo.html"
-            class="footer-demo"
-        >
+        <div class="footer-right">
 
-            Live Demo
+            © 2026 Team AgriSense
 
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
+        </div>
 
 
-    </div>
-
-
-    <div class="container footer-bottom">
-
-        <span>
-            © 2026 AgriSense. All rights reserved.
-        </span>
-
-        <span>
-            Research & Development Project
-        </span>
-
-    </div>
-
-</footer>
+    </footer>
 
 
 
-<script src="js/app.js"></script>
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/app.js"></script>
 
 </body>
 

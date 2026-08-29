@@ -5,34 +5,25 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>AgriSense | Live Demo</title>
+    <title>AgriSense AI | Integrated Crop Decision Engine</title>
 
-    <meta
-        name="description"
-        content="AgriSense live agricultural decision-support demonstration."
-    >
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+          rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/demo.css"
-    >
+    <!-- Demo CSS -->
+    <link rel="stylesheet"
+          href="./css/demo.css?v=40">
 
 </head>
 
@@ -40,426 +31,686 @@
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="demo-header">
-
-    <div class="demo-container nav-container">
+<div class="demo-page">
 
 
-        <a
-            href="index.html"
-            class="demo-brand"
-        >
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-            <img
-                src="assets/logo.png"
-                alt="AgriSense"
-            >
-
-            <span>
-                Agri<span>Sense</span>
-            </span>
-
-        </a>
+    <header class="demo-header">
 
 
-        <nav class="demo-nav">
+        <div class="demo-brand">
 
-            <a href="index.html">
-                Home
+            <a href="./index.html">
+
+                <img
+                    src="./assets/logo.png"
+                    alt="AgriSense AI Logo"
+                >
+
             </a>
-
-            <a
-                href="index.html#platform"
-            >
-                Platform
-            </a>
-
-            <a
-                href="index.html#methodology"
-            >
-                Methodology
-            </a>
-
-            <a
-                href="index.html#team"
-            >
-                Team
-            </a>
-
-        </nav>
-
-
-        <a
-            href="index.html"
-            class="back-button"
-        >
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Back to Website
-
-        </a>
-
-    </div>
-
-</header>
-
-
-
-<main>
-
-
-<!-- =====================================================
-     DEMO HERO
-===================================================== -->
-
-<section class="demo-hero">
-
-    <div class="demo-glow demo-glow-one"></div>
-
-    <div class="demo-glow demo-glow-two"></div>
-
-
-    <div class="demo-container">
-
-
-        <div class="demo-hero-content">
-
-
-            <div class="demo-label">
-
-                <span></span>
-
-                AGRISENSE LIVE DEMONSTRATION
-
-            </div>
-
-
-            <h1>
-
-                Test the
-                <span>decision workflow.</span>
-
-            </h1>
-
-
-            <p>
-
-                Provide a set of agricultural conditions
-                and explore how AgriSense can combine
-                different factors to generate a crop
-                recommendation and supporting insights.
-
-            </p>
-
-
-            <div class="demo-info">
-
-                <div>
-
-                    <i class="fa-solid fa-seedling"></i>
-
-                    Crop Recommendation
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                    Yield Analysis
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-cloud-sun"></i>
-
-                    Climate Risk
-
-                </div>
-
-
-                <div>
-
-                    <i class="fa-solid fa-leaf"></i>
-
-                    Sustainability
-
-                </div>
-
-            </div>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="demo-title">
 
+            <span>
+                AGRISENSE AI
+            </span>
 
+            <h1>
+                Integrated Crop Decision Engine
+            </h1>
 
-<!-- =====================================================
-     INPUT WORKSPACE
-===================================================== -->
-
-<section class="demo-workspace">
-
-    <div class="demo-container">
-
-
-        <div class="workspace-grid">
+        </div>
 
 
-            <!-- INPUT -->
+        <a
+            href="./index.html"
+            class="back-btn"
+        >
+            ← Home
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="demo-main">
+
+
+        <!-- =================================================
+             INTRO
+             ================================================= -->
+
+        <section class="demo-intro">
+
+
+            <div>
+
+                <span class="demo-label">
+                    LIVE RESEARCH DEMO
+                </span>
+
+
+                <h2>
+                    Find the right crops
+                    <span>for your farm.</span>
+                </h2>
+
+
+                <p>
+                    Enter your farm conditions. AgriSense AI
+                    analyzes soil and climate information,
+                    generates agricultural indicators and
+                    integrates them into a single decision
+                    engine to recommend the Top 3 crops.
+                </p>
+
+            </div>
+
+
+            <div class="demo-status">
+
+                <span class="status-dot"></span>
+
+                AI ENGINE READY
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROCESS FLOW
+             ================================================= -->
+
+        <section class="mini-flow">
+
+
+            <div class="flow-item">
+
+                <span>01</span>
+
+                <strong>
+                    Farm Input
+                </strong>
+
+            </div>
+
+
+            <div class="flow-line"></div>
+
+
+            <div class="flow-item">
+
+                <span>02</span>
+
+                <strong>
+                    AI Analysis
+                </strong>
+
+            </div>
+
+
+            <div class="flow-line"></div>
+
+
+            <div class="flow-item">
+
+                <span>03</span>
+
+                <strong>
+                    Decision Engine
+                </strong>
+
+            </div>
+
+
+            <div class="flow-line"></div>
+
+
+            <div class="flow-item active">
+
+                <span>04</span>
+
+                <strong>
+                    Top 3 Crops
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORKSPACE
+             ================================================= -->
+
+        <section class="demo-workspace">
+
+
+            <!-- =================================================
+                 LEFT PANEL
+                 ================================================= -->
 
             <div class="input-panel">
 
+
+                <!-- HEADER -->
 
                 <div class="panel-heading">
 
 
                     <div>
 
-                        <span class="step-label">
-                            STEP 01
+                        <span>
+                            FARM PROFILE
                         </span>
 
-                        <h2>
-                            Agricultural Conditions
-                        </h2>
+                        <h3>
+                            Enter Farm Conditions
+                        </h3>
 
                     </div>
 
 
                     <div class="panel-icon">
-
-                        <i class="fa-solid fa-sliders"></i>
-
+                        🌱
                     </div>
+
 
                 </div>
 
 
-                <p class="panel-description">
 
-                    Enter representative field conditions
-                    to run the demonstration.
-
-                </p>
-
-
+                <!-- =================================================
+                     FARM FORM
+                     ================================================= -->
 
                 <form
-                    class="demo-form"
-                    id="demoForm"
+                    id="predictionForm"
+                    class="farm-form"
                 >
 
 
-                    <!-- SOIL -->
+                    <!-- =================================================
+                         LOCATION & SEASON
+                         ================================================= -->
 
-                    <div class="form-section-title">
-
-                        <i class="fa-solid fa-mountain-sun"></i>
-
-                        Soil Conditions
-
-                    </div>
+                    <div class="form-section">
 
 
-                    <div class="form-grid">
+                        <div class="form-section-title">
 
+                            <span>
+                                01
+                            </span>
 
-                        <div class="field">
-
-                            <label for="nitrogen">
-                                Nitrogen (N)
-                            </label>
-
-                            <input
-                                type="number"
-                                id="nitrogen"
-                                name="nitrogen"
-                                placeholder="e.g. 90"
-                                min="0"
-                                step="0.1"
-                                required
-                            >
+                            Location &amp; Season
 
                         </div>
 
 
-                        <div class="field">
+                        <div class="form-grid">
 
-                            <label for="phosphorus">
-                                Phosphorus (P)
-                            </label>
 
-                            <input
-                                type="number"
-                                id="phosphorus"
-                                name="phosphorus"
-                                placeholder="e.g. 42"
-                                min="0"
-                                step="0.1"
-                                required
-                            >
+                            <!-- LOCATION -->
+
+                            <div class="input-group">
+
+                                <label for="location">
+                                    Location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="location"
+                                    name="location"
+                                    placeholder="e.g. Gazipur"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- SEASON -->
+
+                            <div class="input-group">
+
+                                <label for="season">
+                                    Season
+                                </label>
+
+                                <select
+                                    id="season"
+                                    name="season"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select season
+                                    </option>
+
+                                    <option value="Aus">
+                                        Aus
+                                    </option>
+
+                                    <option value="Aman">
+                                        Aman
+                                    </option>
+
+                                    <option value="Boro">
+                                        Boro
+                                    </option>
+
+                                    <option value="Rabi">
+                                        Rabi
+                                    </option>
+
+                                    <option value="Kharif">
+                                        Kharif
+                                    </option>
+
+                                </select>
+
+                            </div>
+
 
                         </div>
-
-
-                        <div class="field">
-
-                            <label for="potassium">
-                                Potassium (K)
-                            </label>
-
-                            <input
-                                type="number"
-                                id="potassium"
-                                name="potassium"
-                                placeholder="e.g. 43"
-                                min="0"
-                                step="0.1"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="field">
-
-                            <label for="ph">
-                                Soil pH
-                            </label>
-
-                            <input
-                                type="number"
-                                id="ph"
-                                name="ph"
-                                placeholder="e.g. 6.5"
-                                min="0"
-                                max="14"
-                                step="0.1"
-                                required
-                            >
-
-                        </div>
-
 
                     </div>
 
 
 
-                    <!-- ENVIRONMENT -->
+                    <!-- =================================================
+                         SOIL PARAMETERS
+                         ================================================= -->
 
-                    <div class="form-section-title">
+                    <div class="form-section">
 
-                        <i class="fa-solid fa-cloud-sun"></i>
 
-                        Environmental Conditions
+                        <div class="form-section-title">
+
+                            <span>
+                                02
+                            </span>
+
+                            Soil Parameters
+
+                        </div>
+
+
+                        <div class="form-grid three">
+
+
+                            <!-- NITROGEN -->
+
+                            <div class="input-group">
+
+                                <label for="nitrogen">
+
+                                    Nitrogen
+
+                                    <small>
+                                        N
+                                    </small>
+
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="nitrogen"
+                                        name="nitrogen"
+                                        placeholder="e.g. 80"
+                                        min="0"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        kg/ha
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PHOSPHORUS -->
+
+                            <div class="input-group">
+
+                                <label for="phosphorus">
+
+                                    Phosphorus
+
+                                    <small>
+                                        P
+                                    </small>
+
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="phosphorus"
+                                        name="phosphorus"
+                                        placeholder="e.g. 45"
+                                        min="0"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        kg/ha
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- POTASSIUM -->
+
+                            <div class="input-group">
+
+                                <label for="potassium">
+
+                                    Potassium
+
+                                    <small>
+                                        K
+                                    </small>
+
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="potassium"
+                                        name="potassium"
+                                        placeholder="e.g. 40"
+                                        min="0"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        kg/ha
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PH -->
+
+                            <div class="input-group">
+
+                                <label for="ph">
+                                    Soil pH
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="ph"
+                                        name="ph"
+                                        placeholder="e.g. 6.5"
+                                        min="0"
+                                        max="14"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        pH
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SOIL MOISTURE -->
+
+                            <div class="input-group">
+
+                                <label for="soilMoisture">
+                                    Soil Moisture
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="soilMoisture"
+                                        name="soilMoisture"
+                                        placeholder="e.g. 45"
+                                        min="0"
+                                        max="100"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        %
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ORGANIC MATTER -->
+
+                            <div class="input-group">
+
+                                <label for="organicMatter">
+                                    Organic Matter
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="organicMatter"
+                                        name="organicMatter"
+                                        placeholder="e.g. 2.5"
+                                        min="0"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        %
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
 
 
-                    <div class="form-grid">
+
+                    <!-- =================================================
+                         CLIMATE
+                         ================================================= -->
+
+                    <div class="form-section">
 
 
-                        <div class="field">
+                        <div class="form-section-title">
 
-                            <label for="temperature">
-                                Temperature (°C)
-                            </label>
+                            <span>
+                                03
+                            </span>
 
-                            <input
-                                type="number"
-                                id="temperature"
-                                name="temperature"
-                                placeholder="e.g. 25"
-                                step="0.1"
-                                required
-                            >
+                            Climate Conditions
 
                         </div>
 
 
-                        <div class="field">
+                        <div class="form-grid three">
 
-                            <label for="humidity">
-                                Humidity (%)
-                            </label>
 
-                            <input
-                                type="number"
-                                id="humidity"
-                                name="humidity"
-                                placeholder="e.g. 75"
-                                min="0"
-                                max="100"
-                                step="0.1"
-                                required
-                            >
+                            <!-- TEMPERATURE -->
+
+                            <div class="input-group">
+
+                                <label for="temperature">
+                                    Temperature
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="temperature"
+                                        name="temperature"
+                                        placeholder="e.g. 27"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        °C
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- HUMIDITY -->
+
+                            <div class="input-group">
+
+                                <label for="humidity">
+                                    Humidity
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="humidity"
+                                        name="humidity"
+                                        placeholder="e.g. 75"
+                                        min="0"
+                                        max="100"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        %
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- RAINFALL -->
+
+                            <div class="input-group">
+
+                                <label for="rainfall">
+                                    Rainfall
+                                </label>
+
+
+                                <div class="input-unit">
+
+                                    <input
+                                        type="number"
+                                        id="rainfall"
+                                        name="rainfall"
+                                        placeholder="e.g. 1200"
+                                        min="0"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                    <span>
+                                        mm
+                                    </span>
+
+                                </div>
+
+                            </div>
+
 
                         </div>
 
+                    </div>
 
-                        <div class="field">
 
-                            <label for="rainfall">
-                                Rainfall (mm)
-                            </label>
 
-                            <input
-                                type="number"
-                                id="rainfall"
-                                name="rainfall"
-                                placeholder="e.g. 200"
-                                min="0"
-                                step="0.1"
-                                required
-                            >
+                    <!-- =================================================
+                         GENERATED INDICATORS NOTE
+                         ================================================= -->
 
+                    <div class="derived-note">
+
+
+                        <div class="derived-icon">
+                            ✦
                         </div>
 
 
-                        <div class="field">
+                        <div>
 
-                            <label for="season">
-                                Season
-                            </label>
+                            <strong>
+                                AI-generated indicators
+                            </strong>
 
-                            <select
-                                id="season"
-                                name="season"
-                                required
-                            >
 
-                                <option value="">
-                                    Select season
-                                </option>
-
-                                <option value="kharif">
-                                    Kharif
-                                </option>
-
-                                <option value="rabi">
-                                    Rabi
-                                </option>
-
-                                <option value="summer">
-                                    Summer
-                                </option>
-
-                                <option value="winter">
-                                    Winter
-                                </option>
-
-                            </select>
+                            <p>
+                                Yield potential, climate suitability,
+                                soil suitability and ASI will be
+                                calculated automatically from the
+                                submitted farm data.
+                            </p>
 
                         </div>
 
@@ -468,908 +719,915 @@
 
 
 
-                    <!-- LOCATION -->
+                    <!-- =================================================
+                         ACTIONS
+                         ================================================= -->
 
-                    <div class="form-section-title">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        Location & Crop Context
-
-                    </div>
+                    <div class="form-actions">
 
 
-                    <div class="form-grid">
+                        <button
+                            type="button"
+                            class="clear-btn"
+                            id="clearForm"
+                        >
+                            Clear
+                        </button>
 
 
-                        <div class="field">
+                        <button
+                            type="submit"
+                            class="predict-btn"
+                            id="predictBtn"
+                        >
 
-                            <label for="location">
-                                Region
-                            </label>
+                            <span>
+                                Analyze Farm
+                            </span>
 
-                            <select
-                                id="location"
-                                name="location"
-                            >
+                            <b>
+                                →
+                            </b>
 
-                                <option value="">
-                                    Select region
-                                </option>
+                        </button>
 
-                                <option value="central">
-                                    Central Bangladesh
-                                </option>
-
-                                <option value="north">
-                                    Northern Bangladesh
-                                </option>
-
-                                <option value="south">
-                                    Southern Bangladesh
-                                </option>
-
-                                <option value="east">
-                                    Eastern Bangladesh
-                                </option>
-
-                                <option value="west">
-                                    Western Bangladesh
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="field">
-
-                            <label for="water">
-                                Water Availability
-                            </label>
-
-                            <select
-                                id="water"
-                                name="water"
-                            >
-
-                                <option value="">
-                                    Select availability
-                                </option>
-
-                                <option value="low">
-                                    Low
-                                </option>
-
-                                <option value="medium">
-                                    Moderate
-                                </option>
-
-                                <option value="high">
-                                    High
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <button
-                        type="submit"
-                        class="analyze-button"
-                        id="analyzeButton"
-                    >
-
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                        Analyze Conditions
-
-                    </button>
-
-
-                    <div class="demo-disclaimer">
-
-                        <i class="fa-solid fa-circle-info"></i>
-
-                        <span>
-
-                            This page currently demonstrates
-                            the decision interface. The trained
-                            machine learning model can be connected
-                            to this interface through the backend.
-
-                        </span>
 
                     </div>
 
 
                 </form>
 
+
             </div>
 
 
 
-            <!-- EXAMPLE -->
+            <!-- =================================================
+                 RIGHT PANEL
+                 ================================================= -->
 
-            <aside class="example-panel">
-
-
-                <span class="example-badge">
-
-                    <i class="fa-solid fa-flask"></i>
-
-                    DEMO EXAMPLE
-
-                </span>
+            <div class="result-panel">
 
 
-                <h3>
-                    Try a sample case
-                </h3>
+                <!-- =================================================
+                     RESULT HEADER
+                     ================================================= -->
+
+                <div class="result-heading">
 
 
-                <p>
+                    <div>
 
-                    These values can be used to demonstrate
-                    the interface during your presentation.
+                        <span>
+                            AI DECISION OUTPUT
+                        </span>
 
-                </p>
+                        <h3>
+                            Top 3 Crop Recommendation
+                        </h3>
+
+                    </div>
 
 
-                <div class="example-item">
+                    <div class="ai-badge">
 
-                    <span>
-                        Nitrogen
-                    </span>
+                        <span></span>
+
+                        AI
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOADING
+                     ================================================= -->
+
+                <div
+                    class="loading-state"
+                    id="loadingState"
+                    style="display:none;"
+                >
+
+
+                    <div class="loader"></div>
+
 
                     <strong>
-                        90
+                        Analyzing farm data...
                     </strong>
 
-                </div>
 
+                    <p>
+                        Integrating soil, climate, yield potential
+                        and sustainability indicators.
+                    </p>
 
-                <div class="example-item">
-
-                    <span>
-                        Phosphorus
-                    </span>
-
-                    <strong>
-                        42
-                    </strong>
 
                 </div>
 
 
-                <div class="example-item">
 
-                    <span>
-                        Potassium
-                    </span>
+                <!-- =================================================
+                     EMPTY RESULT
+                     ================================================= -->
 
-                    <strong>
-                        43
-                    </strong>
+                <div
+                    class="empty-result"
+                    id="emptyResult"
+                >
+
+
+                    <div class="empty-icon">
+                        🌾
+                    </div>
+
+
+                    <h4>
+                        Waiting for Farm Data
+                    </h4>
+
+
+                    <p>
+                        Enter your farm conditions and click
+                        <strong>Analyze Farm</strong> to generate
+                        an integrated Top 3 crop recommendation
+                        with expected yield.
+                    </p>
+
 
                 </div>
 
 
-                <div class="example-item">
 
-                    <span>
-                        Soil pH
-                    </span>
+                <!-- =================================================
+                     RESULT CONTENT
+                     ================================================= -->
 
-                    <strong>
-                        6.5
-                    </strong>
+                <div
+                    class="result-content"
+                    id="resultContent"
+                    style="display:none;"
+                >
+
+
+
+                    <!-- =================================================
+                         CROP 1 — RICE
+                         ================================================= -->
+
+                    <article
+                        class="crop-card crop-card-first"
+                    >
+
+
+                        <div class="crop-card-top">
+
+
+                            <div class="crop-rank">
+                                #1
+                            </div>
+
+
+                            <div class="best-match">
+                                TOP RECOMMENDATION
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="crop-main">
+
+
+                            <div class="crop-information">
+
+
+                                <h4 id="crop1">
+                                    Rice
+                                </h4>
+
+
+                                <p id="crop1Reason">
+                                    Strong compatibility with the
+                                    submitted farm conditions.
+                                </p>
+
+
+                            </div>
+
+
+                            <div class="yield-result">
+
+
+                                <span>
+                                    EXPECTED YIELD
+                                </span>
+
+
+                                <strong id="yield1">
+                                    4.8
+                                </strong>
+
+
+                                <small>
+                                    t/ha
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- CROP 1 FACTORS -->
+
+                        <div class="crop-factors">
+
+
+                            <!-- Yield Potential -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Yield Potential
+                                    </span>
+
+                                    <strong id="crop1YieldPotential">
+                                        88%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop1YieldBar"
+                                        style="width:88%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Climate -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Climate Suitability
+                                    </span>
+
+                                    <strong id="crop1Climate">
+                                        92%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop1ClimateBar"
+                                        style="width:92%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Soil -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Soil Suitability
+                                    </span>
+
+                                    <strong id="crop1Soil">
+                                        91%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop1SoilBar"
+                                        style="width:91%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ASI -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Agri Sustainability Index
+                                    </span>
+
+                                    <strong id="crop1ASI">
+                                        78%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop1ASIBar"
+                                        style="width:78%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         CROP 2 — MAIZE
+                         ================================================= -->
+
+                    <article
+                        class="crop-card"
+                    >
+
+
+                        <div class="crop-card-top">
+
+
+                            <div class="crop-rank">
+                                #2
+                            </div>
+
+
+                            <div class="crop-position">
+                                RECOMMENDED
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="crop-main">
+
+
+                            <div class="crop-information">
+
+
+                                <h4 id="crop2">
+                                    Maize
+                                </h4>
+
+
+                                <p id="crop2Reason">
+                                    Good potential under the current
+                                    climate and soil profile.
+                                </p>
+
+
+                            </div>
+
+
+                            <div class="yield-result">
+
+
+                                <span>
+                                    EXPECTED YIELD
+                                </span>
+
+
+                                <strong id="yield2">
+                                    6.2
+                                </strong>
+
+
+                                <small>
+                                    t/ha
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- CROP 2 FACTORS -->
+
+                        <div class="crop-factors">
+
+
+                            <!-- Yield -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Yield Potential
+                                    </span>
+
+                                    <strong id="crop2YieldPotential">
+                                        84%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop2YieldBar"
+                                        style="width:84%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Climate -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Climate Suitability
+                                    </span>
+
+                                    <strong id="crop2Climate">
+                                        86%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop2ClimateBar"
+                                        style="width:86%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Soil -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Soil Suitability
+                                    </span>
+
+                                    <strong id="crop2Soil">
+                                        82%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop2SoilBar"
+                                        style="width:82%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ASI -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Agri Sustainability Index
+                                    </span>
+
+                                    <strong id="crop2ASI">
+                                        75%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop2ASIBar"
+                                        style="width:75%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         CROP 3 — WHEAT
+                         ================================================= -->
+
+                    <article
+                        class="crop-card"
+                    >
+
+
+                        <div class="crop-card-top">
+
+
+                            <div class="crop-rank">
+                                #3
+                            </div>
+
+
+                            <div class="crop-position">
+                                ALTERNATIVE
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="crop-main">
+
+
+                            <div class="crop-information">
+
+
+                                <h4 id="crop3">
+                                    Wheat
+                                </h4>
+
+
+                                <p id="crop3Reason">
+                                    A suitable alternative considering
+                                    climate and sustainability indicators.
+                                </p>
+
+
+                            </div>
+
+
+                            <div class="yield-result">
+
+
+                                <span>
+                                    EXPECTED YIELD
+                                </span>
+
+
+                                <strong id="yield3">
+                                    3.7
+                                </strong>
+
+
+                                <small>
+                                    t/ha
+                                </small>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- CROP 3 FACTORS -->
+
+                        <div class="crop-factors">
+
+
+                            <!-- Yield -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Yield Potential
+                                    </span>
+
+                                    <strong id="crop3YieldPotential">
+                                        76%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop3YieldBar"
+                                        style="width:76%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Climate -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Climate Suitability
+                                    </span>
+
+                                    <strong id="crop3Climate">
+                                        79%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop3ClimateBar"
+                                        style="width:79%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Soil -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Soil Suitability
+                                    </span>
+
+                                    <strong id="crop3Soil">
+                                        81%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop3SoilBar"
+                                        style="width:81%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ASI -->
+
+                            <div class="crop-factor">
+
+                                <div class="crop-factor-top">
+
+                                    <span>
+                                        Agri Sustainability Index
+                                    </span>
+
+                                    <strong id="crop3ASI">
+                                        73%
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="crop-factor-bar">
+
+                                    <i
+                                        id="crop3ASIBar"
+                                        style="width:73%;"
+                                    ></i>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         GENERATED ASI
+                         ================================================= -->
+
+                    <div class="asi-generated">
+
+
+                        <div class="asi-generated-icon">
+                            ♻
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                GENERATED INDICATOR
+                            </span>
+
+
+                            <strong>
+                                Agri Sustainability Index
+                            </strong>
+
+
+                            <p>
+                                Automatically generated from the
+                                submitted farm and environmental data.
+                            </p>
+
+                        </div>
+
+
+                        <strong
+                            class="asi-value"
+                            id="asiValue"
+                        >
+                            78
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         EXPLAINABLE AI
+                         ================================================= -->
+
+                    <div class="explanation-box">
+
+
+                        <div class="explanation-icon">
+                            ✦
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                EXPLAINABLE AI
+                            </span>
+
+
+                            <p id="explanationText">
+                                The recommendation combines yield
+                                potential, climate suitability, soil
+                                condition and the system-generated
+                                Agri Sustainability Index before
+                                ranking the final Top 3 crops.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         NEW ANALYSIS
+                         ================================================= -->
+
+                    <button
+                        type="button"
+                        class="new-analysis-btn"
+                        id="newAnalysis"
+                    >
+
+                        ↻
+                        Run New Analysis
+
+                    </button>
+
 
                 </div>
 
 
-                <div class="example-item">
-
-                    <span>
-                        Temperature
-                    </span>
-
-                    <strong>
-                        25°C
-                    </strong>
-
-                </div>
+            </div>
 
 
-                <div class="example-item">
-
-                    <span>
-                        Humidity
-                    </span>
-
-                    <strong>
-                        75%
-                    </strong>
-
-                </div>
-
-
-                <div class="example-footer">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                    <span>
-
-                        Use the sample values to show how
-                        the complete decision workflow works.
-
-                    </span>
-
-                </div>
-
-
-            </aside>
-
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
 
-<!-- =====================================================
-     LOADING
-===================================================== -->
+        <!-- =================================================
+             INFORMATION NOTE
+             ================================================= -->
 
-<section
-    class="analysis-loading"
-    id="analysisLoading"
->
-
-    <div class="demo-container">
-
-        <div class="loader-circle">
-
-            <i class="fa-solid fa-leaf"></i>
-
-        </div>
+        <section class="demo-note">
 
 
-        <h3>
-            Analyzing agricultural conditions
-        </h3>
+            <div class="note-icon">
+                ⓘ
+            </div>
 
-
-        <p>
-            Combining input factors and preparing
-            the decision output...
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     RESULTS
-===================================================== -->
-
-<section
-    class="results-section"
-    id="results"
->
-
-    <div class="demo-container">
-
-
-        <div class="results-heading">
 
             <div>
 
-                <div class="demo-label">
-
-                    <span></span>
-
-                    ANALYSIS RESULT
-
-                </div>
-
-                <h2>
-
-                    Recommended
-                    <span>decision.</span>
-
-                </h2>
-
-            </div>
-
-
-            <p>
-
-                The result summarizes the model decision
-                together with supporting agricultural
-                indicators.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- MAIN RESULT -->
-
-        <div class="main-result-card">
-
-
-            <div class="result-main">
-
-
-                <div class="result-rank">
-                    #1
-                </div>
-
-
-                <div class="result-crop-icon">
-
-                    <i class="fa-solid fa-wheat-awn"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span class="result-small-title">
-                        RECOMMENDED CROP
-                    </span>
-
-                    <h3 id="recommendedCrop">
-                        Rice
-                    </h3>
-
-                    <p id="recommendationText">
-                        Strong overall suitability
-                        under the provided conditions.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="result-score">
-
-                <span>
-                    Suitability
-                </span>
-
-                <strong id="suitabilityScore">
-                    92%
+                <strong>
+                    Integrated Decision Making
                 </strong>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- METRICS -->
-
-        <div class="result-metrics">
-
-
-            <div class="metric-card">
-
-                <div class="metric-icon">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
-
-                <span>
-                    Estimated Yield
-                </span>
-
-                <strong id="yieldValue">
-                    4.8 t/ha
-                </strong>
-
-            </div>
-
-
-            <div class="metric-card">
-
-                <div class="metric-icon">
-
-                    <i class="fa-solid fa-seedling"></i>
-
-                </div>
-
-                <span>
-                    Soil Suitability
-                </span>
-
-                <strong id="soilSuitability">
-                    High
-                </strong>
-
-            </div>
-
-
-            <div class="metric-card">
-
-                <div class="metric-icon">
-
-                    <i class="fa-solid fa-cloud-sun"></i>
-
-                </div>
-
-                <span>
-                    Climate Risk
-                </span>
-
-                <strong
-                    class="risk-low"
-                    id="climateRisk"
-                >
-                    Low
-                </strong>
-
-            </div>
-
-
-            <div class="metric-card">
-
-                <div class="metric-icon">
-
-                    <i class="fa-solid fa-leaf"></i>
-
-                </div>
-
-                <span>
-                    Sustainability
-                </span>
-
-                <strong id="sustainabilityScore">
-                    87%
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- LOWER RESULTS -->
-
-        <div class="results-grid">
-
-
-            <!-- ALTERNATIVES -->
-
-            <div class="alternative-panel">
-
-
-                <div class="result-panel-heading">
-
-                    <div>
-
-                        <span>
-                            ALTERNATIVES
-                        </span>
-
-                        <h3>
-                            Other suitable crops
-                        </h3>
-
-                    </div>
-
-                    <i class="fa-solid fa-list-ol"></i>
-
-                </div>
-
-
-                <div class="alternative-row">
-
-
-                    <div>
-
-                        <span class="alternative-rank">
-                            02
-                        </span>
-
-                        <strong>
-                            Maize
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            84%
-                        </strong>
-
-                        <small>
-                            suitability
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="alternative-row">
-
-
-                    <div>
-
-                        <span class="alternative-rank">
-                            03
-                        </span>
-
-                        <strong>
-                            Wheat
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            79%
-                        </strong>
-
-                        <small>
-                            suitability
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="alternative-row">
-
-
-                    <div>
-
-                        <span class="alternative-rank">
-                            04
-                        </span>
-
-                        <strong>
-                            Potato
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            74%
-                        </strong>
-
-                        <small>
-                            suitability
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- INSIGHT -->
-
-            <div class="insight-panel">
-
-
-                <div class="result-panel-heading">
-
-                    <div>
-
-                        <span>
-                            MODEL INSIGHT
-                        </span>
-
-                        <h3>
-                            Why this recommendation?
-                        </h3>
-
-                    </div>
-
-                    <i class="fa-solid fa-brain"></i>
-
-                </div>
-
-
-                <p id="insightText">
-
-                    The recommended crop shows strong
-                    compatibility with the provided soil
-                    nutrients, pH and environmental
-                    conditions. The combination of these
-                    factors contributes to the higher
-                    suitability score.
-
-                </p>
-
-
-                <div class="insight-points">
-
-
-                    <div>
-
-                        <i class="fa-solid fa-check"></i>
-
-                        Suitable soil condition
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="fa-solid fa-check"></i>
-
-                        Favorable temperature range
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="fa-solid fa-check"></i>
-
-                        Adequate moisture condition
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="fa-solid fa-check"></i>
-
-                        Lower estimated production risk
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ACTIONS -->
-
-        <div class="result-actions">
-
-
-            <button
-                type="button"
-                class="secondary-demo-button"
-                id="editInputs"
-            >
-
-                <i class="fa-solid fa-pen"></i>
-
-                Modify Inputs
-
-            </button>
-
-
-            <button
-                type="button"
-                class="primary-demo-button"
-                id="runAgain"
-            >
-
-                <i class="fa-solid fa-rotate"></i>
-
-                Run Again
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HOW IT WORKS
-===================================================== -->
-
-<section class="how-section">
-
-    <div class="demo-container">
-
-
-        <div class="how-heading">
-
-            <div class="demo-label">
-
-                <span></span>
-
-                DECISION PROCESS
-
-            </div>
-
-
-            <h2>
-
-                How the demo
-                <span>works.</span>
-
-            </h2>
-
-        </div>
-
-
-
-        <div class="how-grid">
-
-
-            <article class="how-card">
-
-                <span>
-                    01
-                </span>
-
-                <i class="fa-solid fa-keyboard"></i>
-
-                <h3>
-                    Enter Conditions
-                </h3>
 
                 <p>
-
-                    Provide soil and environmental
-                    information through the input form.
-
+                    AgriSense analyzes farm inputs and evaluates
+                    each recommended crop using Yield Potential,
+                    Climate Suitability, Soil Suitability and the
+                    Agri Sustainability Index. Expected crop yield
+                    is presented as tonnes per hectare (t/ha).
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="how-card">
-
-                <span>
-                    02
-                </span>
-
-                <i class="fa-solid fa-gears"></i>
-
-                <h3>
-                    Process Data
-                </h3>
-
-                <p>
-
-                    The backend prepares the submitted
-                    features for the trained models.
-
-                </p>
-
-            </article>
+        </section>
 
 
-            <article class="how-card">
-
-                <span>
-                    03
-                </span>
-
-                <i class="fa-solid fa-brain"></i>
-
-                <h3>
-                    Generate Prediction
-                </h3>
-
-                <p>
-
-                    The connected model produces
-                    recommendations and predictions.
-
-                </p>
-
-            </article>
+    </main>
 
 
-            <article class="how-card">
-
-                <span>
-                    04
-                </span>
-
-                <i class="fa-solid fa-chart-simple"></i>
-
-                <h3>
-                    View Decision
-                </h3>
-
-                <p>
-
-                    Results are presented through a
-                    simple agricultural decision dashboard.
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
 
-</main>
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
+<script src="./js/app.js?v=40"></script>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="demo-footer">
-
-    <div class="demo-container footer-inner">
-
-
-        <a
-            href="index.html"
-            class="demo-brand"
-        >
-
-            <img
-                src="assets/logo.png"
-                alt="AgriSense"
-            >
-
-            <span>
-                Agri<span>Sense</span>
-            </span>
-
-        </a>
-
-
-        <p>
-            AI-powered agricultural decision support.
-        </p>
-
-
-        <a href="index.html">
-            Back to AgriSense
-        </a>
-
-    </div>
-
-</footer>
-
-
-
-<script src="js/demo.js"></script>
 
 </body>
 

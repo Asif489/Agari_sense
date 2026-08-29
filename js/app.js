@@ -1,933 +1,989 @@
+/* =========================================================
+   AGRISENSE AI
+   LIVE RESEARCH DEMO
+   app.js
+
+   DEMO MODE
+   Backend will be connected later.
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+       DOM ELEMENTS
+       ===================================================== */
 
-    const menuButton = document.getElementById("menuButton");
-    const navigation = document.querySelector(".navigation");
+    const form =
+        document.getElementById("predictionForm");
 
-    if (menuButton && navigation) {
+    const clearBtn =
+        document.getElementById("clearForm");
 
-        menuButton.addEventListener("click", () => {
+    const predictBtn =
+        document.getElementById("predictBtn");
 
-            navigation.classList.toggle("mobile-open");
+    const newAnalysisBtn =
+        document.getElementById("newAnalysis");
 
-            const icon = menuButton.querySelector("i");
+    const emptyResult =
+        document.getElementById("emptyResult");
 
-            if (navigation.classList.contains("mobile-open")) {
+    const loadingState =
+        document.getElementById("loadingState");
 
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Close menu"
-                );
-
-            } else {
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open menu"
-                );
-
-            }
-
-        });
-
-
-        navigation.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navigation.classList.remove(
-                    "mobile-open"
-                );
-
-                const icon =
-                    menuButton.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            });
-
-        });
-
-    }
+    const resultContent =
+        document.getElementById("resultContent");
 
 
     /* =====================================================
-       TEAM CAROUSEL
+       DEMO CROP DATA
        
-       5 ORIGINAL MEMBERS
-       2 CLONES
-       2 MEMBERS VISIBLE
-       AUTO SLIDE = 1.8 SEC
-    ===================================================== */
+       Later these values will come from the ML model.
+       ===================================================== */
 
-    const teamTrack =
-        document.getElementById("teamTrack");
+    const BASE_CROPS = [
 
-    const teamNext =
-        document.getElementById("teamNext");
+        {
+            crop: "Rice",
 
-    const teamPrev =
-        document.getElementById("teamPrev");
+            yieldPotential: 88,
 
-    const teamDots =
-        document.getElementById("teamDots");
+            climate: 92,
 
-    const teamCarousel =
-        document.querySelector(".team-carousel");
+            soil: 91,
 
+            asi: 78,
 
-    if (teamTrack) {
+            expectedYield: 4.8,
 
-        const originalMembers =
-            Array.from(
-                teamTrack.querySelectorAll(
-                    ".team-member:not(.team-clone)"
-                )
-            );
-
-        const clones =
-            Array.from(
-                teamTrack.querySelectorAll(
-                    ".team-member.team-clone"
-                )
-            );
-
-        const totalMembers =
-            originalMembers.length;
-
-        const visibleMembers = 2;
-
-        let currentIndex = 0;
-
-        let isAnimating = false;
-
-        let autoSlide = null;
-
-        let hovering = false;
+            reason:
+                "Strong compatibility with the submitted soil, rainfall and temperature conditions."
+        },
 
 
-        /* =================================================
-           CARD WIDTH
-        ================================================= */
+        {
+            crop: "Maize",
 
-        function getCardWidth() {
+            yieldPotential: 84,
 
-            const card =
-                teamTrack.querySelector(
-                    ".team-member"
-                );
+            climate: 86,
 
-            if (!card) {
-                return 0;
-            }
+            soil: 82,
 
-            const cardWidth =
-                card.getBoundingClientRect().width;
+            asi: 75,
 
-            const styles =
-                window.getComputedStyle(
-                    teamTrack
-                );
+            expectedYield: 6.2,
 
-            const gap =
-                parseFloat(styles.gap) ||
-                parseFloat(styles.columnGap) ||
-                0;
+            reason:
+                "Good potential under the current climate and soil profile."
+        },
 
-            return cardWidth + gap;
 
+        {
+            crop: "Wheat",
+
+            yieldPotential: 76,
+
+            climate: 79,
+
+            soil: 81,
+
+            asi: 73,
+
+            expectedYield: 3.7,
+
+            reason:
+                "A suitable alternative considering climate and sustainability indicators."
         }
 
+    ];
 
-        /* =================================================
-           DOTS
-        ================================================= */
 
-        function createDots() {
+    /* =====================================================
+       FORM SUBMIT
+       ===================================================== */
 
-            if (!teamDots) {
+    if (form) {
+
+        form.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+
+            /* Validate inputs */
+
+            if (!validateForm()) {
                 return;
             }
 
-            teamDots.innerHTML = "";
 
-            for (
-                let i = 0;
-                i < totalMembers;
-                i++
-            ) {
+            /* Show loading */
 
-                const dot =
-                    document.createElement("button");
-
-                dot.type = "button";
-
-                dot.className =
-                    "team-dot";
-
-                dot.setAttribute(
-                    "aria-label",
-                    `Show team member group ${i + 1}`
-                );
-
-                if (i === 0) {
-
-                    dot.classList.add("active");
-
-                }
-
-                dot.addEventListener(
-                    "click",
-                    () => {
-
-                        if (isAnimating) {
-                            return;
-                        }
-
-                        currentIndex = i;
-
-                        moveTeam(
-                            currentIndex,
-                            true
-                        );
-
-                        restartAutoSlide();
-
-                    }
-                );
-
-                teamDots.appendChild(dot);
-
-            }
-
-        }
-
-
-        /* =================================================
-           UPDATE DOTS
-        ================================================= */
-
-        function updateDots() {
-
-            if (!teamDots) {
-                return;
-            }
-
-            const dots =
-                teamDots.querySelectorAll(
-                    ".team-dot"
-                );
-
-            let activeIndex =
-                currentIndex % totalMembers;
-
-            dots.forEach(
-                (dot, index) => {
-
-                    dot.classList.toggle(
-                        "active",
-                        index === activeIndex
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =================================================
-           MOVE
-        ================================================= */
-
-        function moveTeam(
-            index,
-            animate = true
-        ) {
-
-            const width =
-                getCardWidth();
-
-            if (!width) {
-                return;
-            }
-
-            if (animate) {
-
-                teamTrack.style.transition =
-                    "transform .45s cubic-bezier(.22,.61,.36,1)";
-
-            } else {
-
-                teamTrack.style.transition =
-                    "none";
-
-            }
-
-            teamTrack.style.transform =
-                `translate3d(-${index * width}px, 0, 0)`;
-
-            updateDots();
-
-        }
-
-
-        /* =================================================
-           NEXT
-           
-           0 = 1 + 2
-           1 = 2 + 3
-           2 = 3 + 4
-           3 = 4 + 5
-           4 = 5 + 1 CLONE
-           5 = 1 CLONE + 2 CLONE
-
-           Then reset to 0.
-        ================================================= */
-
-        function nextSlide() {
-
-            if (
-                isAnimating ||
-                totalMembers < 2
-            ) {
-                return;
-            }
-
-            isAnimating = true;
-
-            currentIndex++;
-
-            moveTeam(
-                currentIndex,
-                true
-            );
+            showLoading();
 
 
             /*
-                Position 5 means both visible
-                cards are clones.
+             * Simulate AI processing.
+             *
+             * No backend request is made here.
+             */
 
-                After animation completes,
-                silently jump back to position 0.
-            */
+            setTimeout(() => {
 
-            if (
-                currentIndex ===
-                totalMembers + 0
-            ) {
+                const result =
+                    generateDemoPrediction();
 
-                setTimeout(
-                    () => {
+                showResult(result);
 
-                        currentIndex = 0;
+            }, 1600);
 
-                        moveTeam(
-                            0,
-                            false
-                        );
+        });
 
-                        requestAnimationFrame(
-                            () => {
-
-                                teamTrack.style.transition =
-                                    "transform .45s cubic-bezier(.22,.61,.36,1)";
-
-                            }
-                        );
-
-                        isAnimating = false;
-
-                    },
-                    480
-                );
-
-            } else {
-
-                setTimeout(
-                    () => {
-
-                        isAnimating = false;
-
-                    },
-                    480
-                );
-
-            }
-
-        }
+    }
 
 
-        /* =================================================
-           PREVIOUS
-        ================================================= */
+    /* =====================================================
+       GENERATE DEMO PREDICTION
+       
+       Input values slightly influence the demo scores.
+       This makes the UI feel dynamic before backend
+       integration.
+       ===================================================== */
 
-        function previousSlide() {
+    function generateDemoPrediction() {
 
-            if (
-                isAnimating ||
-                totalMembers < 2
-            ) {
-                return;
-            }
-
-            isAnimating = true;
+        const data =
+            collectInput();
 
 
-            if (currentIndex === 0) {
+        /*
+         * Calculate general input quality.
+         */
 
-                /*
-                    Move silently to the last clone position.
-                */
+        const soilQuality =
+            calculateSoilQuality(data);
 
-                currentIndex =
-                    totalMembers;
 
-                moveTeam(
-                    currentIndex,
-                    false
-                );
+        const climateQuality =
+            calculateClimateQuality(data);
+
+
+        /*
+         * Generate crop-specific results.
+         */
+
+        const crops =
+            BASE_CROPS.map((base, index) => {
+
+                let yieldPotential =
+                    base.yieldPotential;
+
+                let climate =
+                    base.climate;
+
+                let soil =
+                    base.soil;
+
+                let asi =
+                    base.asi;
+
+                let expectedYield =
+                    base.expectedYield;
 
 
                 /*
-                    Then animate backward.
-                */
+                 * Adjust according to soil.
+                 */
 
-                requestAnimationFrame(
-                    () => {
-
-                        requestAnimationFrame(
-                            () => {
-
-                                currentIndex =
-                                    totalMembers - 1;
-
-                                moveTeam(
-                                    currentIndex,
-                                    true
-                                );
-
-                            }
-                        );
-
-                    }
-                );
-
-            } else {
-
-                currentIndex--;
-
-                moveTeam(
-                    currentIndex,
-                    true
-                );
-
-            }
+                soil +=
+                    (soilQuality - 70) * 0.22;
 
 
-            setTimeout(
-                () => {
+                /*
+                 * Adjust according to climate.
+                 */
 
-                    isAnimating = false;
-
-                },
-                480
-            );
-
-        }
+                climate +=
+                    (climateQuality - 70) * 0.20;
 
 
-        /* =================================================
-           AUTOPLAY
-        ================================================= */
+                /*
+                 * Yield depends on both.
+                 */
 
-        function startAutoSlide() {
-
-            stopAutoSlide();
-
-            autoSlide =
-                setInterval(
-                    () => {
-
-                        if (!hovering) {
-
-                            nextSlide();
-
-                        }
-
-                    },
-                    1800
-                );
-
-        }
+                yieldPotential +=
+                    (
+                        (soilQuality - 70) * 0.12
+                    ) +
+                    (
+                        (climateQuality - 70) * 0.13
+                    );
 
 
-        function stopAutoSlide() {
+                /*
+                 * ASI is generated from several
+                 * integrated factors.
+                 */
 
-            if (autoSlide) {
-
-                clearInterval(
-                    autoSlide
-                );
-
-                autoSlide = null;
-
-            }
-
-        }
-
-
-        function restartAutoSlide() {
-
-            stopAutoSlide();
-
-            startAutoSlide();
-
-        }
+                asi =
+                    (
+                        soil * 0.30
+                    ) +
+                    (
+                        climate * 0.25
+                    ) +
+                    (
+                        yieldPotential * 0.25
+                    ) +
+                    (
+                        base.asi * 0.20
+                    );
 
 
-        /* =================================================
-           NEXT BUTTON
-        ================================================= */
+                /*
+                 * Expected yield changes with
+                 * yield potential.
+                 */
 
-        if (teamNext) {
+                expectedYield =
+                    base.expectedYield *
+                    (
+                        0.85 +
+                        (yieldPotential / 100) * 0.30
+                    );
 
-            teamNext.addEventListener(
-                "click",
-                () => {
 
-                    nextSlide();
+                /*
+                 * Slight crop-specific adjustment.
+                 */
 
-                    restartAutoSlide();
+                if (index === 0) {
+
+                    expectedYield +=
+                        data.rainfall >= 900
+                            ? 0.25
+                            : -0.10;
 
                 }
-            );
-
-        }
 
 
-        /* =================================================
-           PREVIOUS BUTTON
-        ================================================= */
+                if (index === 1) {
 
-        if (teamPrev) {
-
-            teamPrev.addEventListener(
-                "click",
-                () => {
-
-                    previousSlide();
-
-                    restartAutoSlide();
+                    expectedYield +=
+                        data.temperature >= 24 &&
+                        data.temperature <= 32
+                            ? 0.20
+                            : -0.10;
 
                 }
-            );
-
-        }
 
 
-        /* =================================================
-           HOVER PAUSE
-        ================================================= */
+                if (index === 2) {
 
-        if (teamCarousel) {
-
-            teamCarousel.addEventListener(
-                "mouseenter",
-                () => {
-
-                    hovering = true;
-
-                    stopAutoSlide();
+                    expectedYield +=
+                        data.temperature <= 28
+                            ? 0.15
+                            : -0.12;
 
                 }
-            );
 
 
-            teamCarousel.addEventListener(
-                "mouseleave",
-                () => {
+                return {
 
-                    hovering = false;
+                    ...base,
 
-                    startAutoSlide();
+                    yieldPotential:
+                        roundScore(yieldPotential),
 
-                }
-            );
+                    climate:
+                        roundScore(climate),
 
-        }
+                    soil:
+                        roundScore(soil),
 
+                    asi:
+                        roundScore(asi),
 
-        /* =================================================
-           TOUCH SWIPE
-        ================================================= */
+                    expectedYield:
+                        roundYield(expectedYield)
 
-        let touchStartX = 0;
+                };
 
-        let touchEndX = 0;
-
-
-        if (teamCarousel) {
-
-            teamCarousel.addEventListener(
-                "touchstart",
-                event => {
-
-                    touchStartX =
-                        event.changedTouches[0]
-                            .screenX;
-
-                    stopAutoSlide();
-
-                },
-                {
-                    passive: true
-                }
-            );
+            });
 
 
-            teamCarousel.addEventListener(
-                "touchend",
-                event => {
+        /*
+         * Sort by integrated decision score.
+         *
+         * ASI + Yield + Climate + Soil
+         */
 
-                    touchEndX =
-                        event.changedTouches[0]
-                            .screenX;
+        crops.sort((a, b) => {
 
-                    const distance =
-                        touchStartX -
-                        touchEndX;
+            const scoreA =
+                integratedScore(a);
 
+            const scoreB =
+                integratedScore(b);
 
-                    if (
-                        Math.abs(distance) > 45
-                    ) {
+            return scoreB - scoreA;
 
-                        if (distance > 0) {
-
-                            nextSlide();
-
-                        } else {
-
-                            previousSlide();
-
-                        }
-
-                    }
+        });
 
 
-                    startAutoSlide();
+        return {
 
-                },
-                {
-                    passive: true
-                }
-            );
+            crops: crops.slice(0, 3)
 
-        }
-
-
-        /* =================================================
-           RESIZE
-        ================================================= */
-
-        window.addEventListener(
-            "resize",
-            () => {
-
-                moveTeam(
-                    currentIndex,
-                    false
-                );
-
-            }
-        );
-
-
-        /* =================================================
-           INITIALIZE
-        ================================================= */
-
-        createDots();
-
-        moveTeam(
-            0,
-            false
-        );
-
-        startAutoSlide();
+        };
 
     }
 
 
     /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
+       COLLECT INPUT
+       ===================================================== */
 
-    const revealElements =
-        document.querySelectorAll(
-            ".about-card, " +
-            ".platform-card, " +
-            ".method-step, " +
-            ".contact-form-box, " +
-            ".contact-info"
+    function collectInput() {
+
+        return {
+
+            location:
+                getValue("location"),
+
+            season:
+                getValue("season"),
+
+            nitrogen:
+                getNumber("nitrogen"),
+
+            phosphorus:
+                getNumber("phosphorus"),
+
+            potassium:
+                getNumber("potassium"),
+
+            ph:
+                getNumber("ph"),
+
+            soilMoisture:
+                getNumber("soilMoisture"),
+
+            organicMatter:
+                getNumber("organicMatter"),
+
+            temperature:
+                getNumber("temperature"),
+
+            humidity:
+                getNumber("humidity"),
+
+            rainfall:
+                getNumber("rainfall")
+
+        };
+
+    }
+
+
+    /* =====================================================
+       SOIL QUALITY
+       ===================================================== */
+
+    function calculateSoilQuality(data) {
+
+        let score = 70;
+
+
+        /*
+         * Nitrogen
+         */
+
+        if (data.nitrogen >= 60 &&
+            data.nitrogen <= 120) {
+
+            score += 5;
+
+        }
+
+
+        /*
+         * Phosphorus
+         */
+
+        if (data.phosphorus >= 30 &&
+            data.phosphorus <= 70) {
+
+            score += 5;
+
+        }
+
+
+        /*
+         * Potassium
+         */
+
+        if (data.potassium >= 30 &&
+            data.potassium <= 80) {
+
+            score += 5;
+
+        }
+
+
+        /*
+         * Soil pH
+         */
+
+        if (data.ph >= 5.5 &&
+            data.ph <= 7.5) {
+
+            score += 7;
+
+        }
+
+
+        /*
+         * Soil moisture
+         */
+
+        if (data.soilMoisture >= 30 &&
+            data.soilMoisture <= 70) {
+
+            score += 4;
+
+        }
+
+
+        /*
+         * Organic matter
+         */
+
+        if (data.organicMatter >= 2 &&
+            data.organicMatter <= 5) {
+
+            score += 4;
+
+        }
+
+
+        return clamp(
+            score,
+            50,
+            98
+        );
+
+    }
+
+
+    /* =====================================================
+       CLIMATE QUALITY
+       ===================================================== */
+
+    function calculateClimateQuality(data) {
+
+        let score = 70;
+
+
+        /*
+         * Temperature
+         */
+
+        if (
+            data.temperature >= 20 &&
+            data.temperature <= 32
+        ) {
+
+            score += 8;
+
+        }
+
+
+        /*
+         * Humidity
+         */
+
+        if (
+            data.humidity >= 50 &&
+            data.humidity <= 85
+        ) {
+
+            score += 5;
+
+        }
+
+
+        /*
+         * Rainfall
+         */
+
+        if (
+            data.rainfall >= 700 &&
+            data.rainfall <= 1800
+        ) {
+
+            score += 8;
+
+        }
+
+
+        return clamp(
+            score,
+            50,
+            98
+        );
+
+    }
+
+
+    /* =====================================================
+       INTEGRATED DECISION SCORE
+       
+       Used internally for ranking.
+       NOT displayed as Match Score.
+       ===================================================== */
+
+    function integratedScore(crop) {
+
+        return (
+
+            crop.yieldPotential * 0.30 +
+
+            crop.climate * 0.25 +
+
+            crop.soil * 0.25 +
+
+            crop.asi * 0.20
+
+        );
+
+    }
+
+
+    /* =====================================================
+       SHOW LOADING
+       ===================================================== */
+
+    function showLoading() {
+
+        if (emptyResult) {
+
+            emptyResult.style.display =
+                "none";
+
+        }
+
+
+        if (resultContent) {
+
+            resultContent.style.display =
+                "none";
+
+        }
+
+
+        if (loadingState) {
+
+            loadingState.style.display =
+                "flex";
+
+        }
+
+
+        if (predictBtn) {
+
+            predictBtn.disabled = true;
+
+
+            const text =
+                predictBtn.querySelector("span");
+
+
+            if (text) {
+
+                text.textContent =
+                    "Analyzing...";
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SHOW RESULT
+       ===================================================== */
+
+    function showResult(result) {
+
+        const crops =
+            result.crops;
+
+
+        /*
+         * ---------------------------------------------
+         * CROP 1
+         * ---------------------------------------------
+         */
+
+        renderCrop(
+            1,
+            crops[0]
         );
 
 
-    if (
-        "IntersectionObserver" in window
+        /*
+         * ---------------------------------------------
+         * CROP 2
+         * ---------------------------------------------
+         */
+
+        renderCrop(
+            2,
+            crops[1]
+        );
+
+
+        /*
+         * ---------------------------------------------
+         * CROP 3
+         * ---------------------------------------------
+         */
+
+        renderCrop(
+            3,
+            crops[2]
+        );
+
+
+        /*
+         * ---------------------------------------------
+         * ASI
+         *
+         * Overall ASI shown as average of
+         * recommended crop ASI values.
+         * ---------------------------------------------
+         */
+
+        const overallASI =
+            Math.round(
+                (
+                    crops[0].asi +
+                    crops[1].asi +
+                    crops[2].asi
+                ) / 3
+            );
+
+
+        setText(
+            "asiValue",
+            overallASI
+        );
+
+
+        /*
+         * ---------------------------------------------
+         * EXPLANATION
+         * ---------------------------------------------
+         */
+
+        setText(
+            "explanationText",
+
+            "The recommendation evaluates each crop using " +
+            "yield potential, climate suitability, soil suitability " +
+            "and the system-generated Agri Sustainability Index. " +
+            "These integrated indicators are used to rank the final Top 3 crops."
+        );
+
+
+        /*
+         * ---------------------------------------------
+         * HIDE LOADING
+         * ---------------------------------------------
+         */
+
+        if (loadingState) {
+
+            loadingState.style.display =
+                "none";
+
+        }
+
+
+        /*
+         * ---------------------------------------------
+         * SHOW RESULT
+         * ---------------------------------------------
+         */
+
+        if (emptyResult) {
+
+            emptyResult.style.display =
+                "none";
+
+        }
+
+
+        if (resultContent) {
+
+            resultContent.style.display =
+                "block";
+
+
+            resultContent.classList.remove(
+                "result-visible"
+            );
+
+
+            requestAnimationFrame(() => {
+
+                resultContent.classList.add(
+                    "result-visible"
+                );
+
+            });
+
+        }
+
+
+        /*
+         * ---------------------------------------------
+         * RESET BUTTON
+         * ---------------------------------------------
+         */
+
+        if (predictBtn) {
+
+            predictBtn.disabled =
+                false;
+
+
+            const text =
+                predictBtn.querySelector("span");
+
+
+            if (text) {
+
+                text.textContent =
+                    "Analyze Farm";
+
+            }
+
+        }
+
+
+        /*
+         * Mobile scroll
+         */
+
+        if (
+            window.innerWidth <= 900 &&
+            resultContent
+        ) {
+
+            setTimeout(() => {
+
+                resultContent.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }, 150);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RENDER ONE CROP
+       ===================================================== */
+
+    function renderCrop(
+        number,
+        crop
     ) {
 
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target.classList.add(
-                                    "visible"
-                                );
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
+        if (!crop) {
+            return;
+        }
 
 
-        revealElements.forEach(
-            element => {
+        /*
+         * Crop name
+         */
 
-                element.classList.add(
-                    "reveal"
-                );
-
-                observer.observe(
-                    element
-                );
-
-            }
+        setText(
+            `crop${number}`,
+            crop.crop
         );
 
 
-        const revealStyle =
-            document.createElement("style");
+        /*
+         * Expected yield
+         */
 
-
-        revealStyle.textContent = `
-
-            .reveal {
-
-                opacity: 0;
-
-                transform:
-                    translateY(18px);
-
-                transition:
-                    opacity .6s ease,
-                    transform .6s ease;
-
-            }
-
-            .reveal.visible {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-            }
-
-        `;
-
-
-        document.head.appendChild(
-            revealStyle
-        );
-
-    }
-
-
-    /* =====================================================
-       CONTACT FORM
-    ===================================================== */
-
-    const contactForm =
-        document.getElementById(
-            "contactForm"
+        setText(
+            `yield${number}`,
+            formatYield(
+                crop.expectedYield
+            )
         );
 
 
-    if (contactForm) {
+        /*
+         * Reason
+         */
 
-        contactForm.addEventListener(
-            "submit",
-            event => {
-
-                event.preventDefault();
-
-
-                const button =
-                    contactForm.querySelector(
-                        ".form-submit"
-                    );
+        setText(
+            `crop${number}Reason`,
+            crop.reason
+        );
 
 
-                if (!button) {
-                    return;
-                }
+        /*
+         * ---------------------------------------------
+         * YIELD POTENTIAL
+         * ---------------------------------------------
+         */
+
+        setText(
+            `crop${number}YieldPotential`,
+            `${crop.yieldPotential}%`
+        );
 
 
-                const originalHTML =
-                    button.innerHTML;
+        setBar(
+            `crop${number}YieldBar`,
+            crop.yieldPotential
+        );
 
 
-                button.disabled = true;
+        /*
+         * ---------------------------------------------
+         * CLIMATE
+         * ---------------------------------------------
+         */
+
+        setText(
+            `crop${number}Climate`,
+            `${crop.climate}%`
+        );
 
 
-                button.innerHTML = `
-                    <i class="fa-solid fa-spinner fa-spin"></i>
-                    Sending...
-                `;
+        setBar(
+            `crop${number}ClimateBar`,
+            crop.climate
+        );
 
 
-                setTimeout(
-                    () => {
+        /*
+         * ---------------------------------------------
+         * SOIL
+         * ---------------------------------------------
+         */
 
-                        button.innerHTML = `
-                            <i class="fa-solid fa-check"></i>
-                            Message Prepared
-                        `;
+        setText(
+            `crop${number}Soil`,
+            `${crop.soil}%`
+        );
 
 
-                        setTimeout(
-                            () => {
+        setBar(
+            `crop${number}SoilBar`,
+            crop.soil
+        );
 
-                                contactForm.reset();
 
-                                button.disabled =
-                                    false;
+        /*
+         * ---------------------------------------------
+         * ASI
+         * ---------------------------------------------
+         */
 
-                                button.innerHTML =
-                                    originalHTML;
+        setText(
+            `crop${number}ASI`,
+            `${crop.asi}%`
+        );
 
-                            },
-                            1500
-                        );
 
-                    },
-                    900
-                );
-
-            }
+        setBar(
+            `crop${number}ASIBar`,
+            crop.asi
         );
 
     }
 
 
     /* =====================================================
-       ACTIVE NAVIGATION
-    ===================================================== */
+       BAR ANIMATION
+       ===================================================== */
 
-    const sections =
-        document.querySelectorAll(
-            "main section[id]"
-        );
-
-
-    const navLinks =
-        document.querySelectorAll(
-            ".navigation a"
-        );
-
-
-    if (
-        sections.length &&
-        navLinks.length &&
-        "IntersectionObserver" in window
+    function setBar(
+        id,
+        value
     ) {
 
-        const sectionObserver =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                const id =
-                                    entry.target.id;
+        const bar =
+            document.getElementById(id);
 
 
-                                navLinks.forEach(
-                                    link => {
-
-                                        link.classList.remove(
-                                            "active"
-                                        );
+        if (!bar) {
+            return;
+        }
 
 
-                                        if (
-                                            link.getAttribute(
-                                                "href"
-                                            ) ===
-                                            `#${id}`
-                                        ) {
-
-                                            link.classList.add(
-                                                "active"
-                                            );
-
-                                        }
-
-                                    }
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    rootMargin:
-                        "-30% 0px -60% 0px"
-                }
+        const safeValue =
+            clamp(
+                Number(value),
+                0,
+                100
             );
 
 
-        sections.forEach(
-            section => {
+        /*
+         * Reset first.
+         */
 
-                sectionObserver.observe(
-                    section
-                );
+        bar.style.width =
+            "0%";
+
+
+        /*
+         * Animate.
+         */
+
+        setTimeout(() => {
+
+            bar.style.width =
+                `${safeValue}%`;
+
+        }, 100);
+
+    }
+
+
+    /* =====================================================
+       CLEAR
+       ===================================================== */
+
+    if (clearBtn) {
+
+        clearBtn.addEventListener(
+            "click",
+            () => {
+
+                if (form) {
+                    form.reset();
+                }
+
+
+                resetResult();
 
             }
         );
@@ -936,41 +992,502 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       HEADER SHADOW
-    ===================================================== */
+       NEW ANALYSIS
+       ===================================================== */
 
-    const header =
-        document.querySelector(
-            ".site-header"
-        );
+    if (newAnalysisBtn) {
 
-
-    if (header) {
-
-        window.addEventListener(
-            "scroll",
+        newAnalysisBtn.addEventListener(
+            "click",
             () => {
 
-                if (
-                    window.scrollY > 10
-                ) {
+                resetResult();
 
-                    header.style.boxShadow =
-                        "0 6px 22px rgba(20,55,42,.06)";
 
-                } else {
+                const location =
+                    document.getElementById(
+                        "location"
+                    );
 
-                    header.style.boxShadow =
-                        "none";
+
+                if (location) {
+
+                    location.focus();
 
                 }
 
-            },
-            {
-                passive: true
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
             }
         );
 
     }
+
+
+    /* =====================================================
+       RESET RESULT
+       ===================================================== */
+
+    function resetResult() {
+
+        if (loadingState) {
+
+            loadingState.style.display =
+                "none";
+
+        }
+
+
+        if (resultContent) {
+
+            resultContent.style.display =
+                "none";
+
+        }
+
+
+        if (emptyResult) {
+
+            emptyResult.style.display =
+                "flex";
+
+        }
+
+
+        /*
+         * Reset all bars.
+         */
+
+        const barIds = [
+
+            "crop1YieldBar",
+            "crop1ClimateBar",
+            "crop1SoilBar",
+            "crop1ASIBar",
+
+            "crop2YieldBar",
+            "crop2ClimateBar",
+            "crop2SoilBar",
+            "crop2ASIBar",
+
+            "crop3YieldBar",
+            "crop3ClimateBar",
+            "crop3SoilBar",
+            "crop3ASIBar"
+
+        ];
+
+
+        barIds.forEach(id => {
+
+            const bar =
+                document.getElementById(id);
+
+
+            if (bar) {
+
+                bar.style.width =
+                    "0%";
+
+            }
+
+        });
+
+
+        /*
+         * Reset button.
+         */
+
+        if (predictBtn) {
+
+            predictBtn.disabled =
+                false;
+
+
+            const text =
+                predictBtn.querySelector("span");
+
+
+            if (text) {
+
+                text.textContent =
+                    "Analyze Farm";
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       HELPERS
+       ===================================================== */
+
+    function getValue(id) {
+
+        const element =
+            document.getElementById(id);
+
+
+        if (!element) {
+            return "";
+        }
+
+
+        return element.value.trim();
+
+    }
+
+
+    function getNumber(id) {
+
+        const value =
+            getValue(id);
+
+
+        const number =
+            Number.parseFloat(value);
+
+
+        return Number.isFinite(number)
+            ? number
+            : 0;
+
+    }
+
+
+    function setText(
+        id,
+        value
+    ) {
+
+        const element =
+            document.getElementById(id);
+
+
+        if (element) {
+
+            element.textContent =
+                value;
+
+        }
+
+    }
+
+
+    function clamp(
+        value,
+        min,
+        max
+    ) {
+
+        return Math.max(
+            min,
+            Math.min(
+                max,
+                value
+            )
+        );
+
+    }
+
+
+    function roundScore(value) {
+
+        return Math.round(
+            clamp(
+                value,
+                50,
+                98
+            )
+        );
+
+    }
+
+
+    function roundYield(value) {
+
+        return Number(
+            Math.max(
+                0.1,
+                value
+            ).toFixed(1)
+        );
+
+    }
+
+
+    function formatYield(value) {
+
+        return Number(value)
+            .toFixed(1);
+
+    }
+
+
+    /* =====================================================
+       VALIDATION
+       ===================================================== */
+
+    function validateForm() {
+
+        if (!form) {
+            return false;
+        }
+
+
+        const requiredFields = [
+
+            "location",
+            "season",
+            "nitrogen",
+            "phosphorus",
+            "potassium",
+            "ph",
+            "soilMoisture",
+            "organicMatter",
+            "temperature",
+            "humidity",
+            "rainfall"
+
+        ];
+
+
+        for (
+            const id of requiredFields
+        ) {
+
+            const element =
+                document.getElementById(id);
+
+
+            if (!element) {
+                continue;
+            }
+
+
+            if (
+                element.value.trim() === ""
+            ) {
+
+                showMessage(
+                    "Please complete all farm conditions."
+                );
+
+
+                element.focus();
+
+
+                return false;
+
+            }
+
+        }
+
+
+        /*
+         * pH validation
+         */
+
+        const ph =
+            getNumber("ph");
+
+
+        if (
+            ph < 0 ||
+            ph > 14
+        ) {
+
+            showMessage(
+                "Soil pH must be between 0 and 14."
+            );
+
+
+            document
+                .getElementById("ph")
+                ?.focus();
+
+
+            return false;
+
+        }
+
+
+        /*
+         * Humidity
+         */
+
+        const humidity =
+            getNumber("humidity");
+
+
+        if (
+            humidity < 0 ||
+            humidity > 100
+        ) {
+
+            showMessage(
+                "Humidity must be between 0 and 100%."
+            );
+
+
+            document
+                .getElementById("humidity")
+                ?.focus();
+
+
+            return false;
+
+        }
+
+
+        /*
+         * Soil moisture
+         */
+
+        const moisture =
+            getNumber("soilMoisture");
+
+
+        if (
+            moisture < 0 ||
+            moisture > 100
+        ) {
+
+            showMessage(
+                "Soil moisture must be between 0 and 100%."
+            );
+
+
+            document
+                .getElementById("soilMoisture")
+                ?.focus();
+
+
+            return false;
+
+        }
+
+
+        return true;
+
+    }
+
+
+    /* =====================================================
+       MESSAGE
+       ===================================================== */
+
+    function showMessage(message) {
+
+        let box =
+            document.getElementById(
+                "agrisenseMessage"
+            );
+
+
+        if (!box) {
+
+            box =
+                document.createElement("div");
+
+
+            box.id =
+                "agrisenseMessage";
+
+
+            Object.assign(
+                box.style,
+                {
+
+                    position: "fixed",
+
+                    left: "50%",
+
+                    bottom: "25px",
+
+                    transform:
+                        "translateX(-50%)",
+
+                    zIndex: "99999",
+
+                    padding:
+                        "14px 20px",
+
+                    borderRadius:
+                        "11px",
+
+                    background:
+                        "#073b27",
+
+                    color:
+                        "#ffffff",
+
+                    fontSize:
+                        "14px",
+
+                    fontWeight:
+                        "700",
+
+                    boxShadow:
+                        "0 12px 35px rgba(0,0,0,.2)",
+
+                    maxWidth:
+                        "90%",
+
+                    textAlign:
+                        "center"
+
+                }
+            );
+
+
+            document.body.appendChild(box);
+
+        }
+
+
+        box.textContent =
+            message;
+
+
+        box.style.display =
+            "block";
+
+
+        clearTimeout(
+            box._timer
+        );
+
+
+        box._timer =
+            setTimeout(() => {
+
+                box.style.display =
+                    "none";
+
+            }, 3000);
+
+    }
+
+
+    /* =====================================================
+       INITIAL STATE
+       ===================================================== */
+
+    resetResult();
+
+
+    console.log(
+        "AgriSense AI — Demo Mode Ready"
+    );
 
 });
