@@ -17,6 +17,9 @@
 
     <title>AgriSense AI | Agricultural Decision Support</title>
 
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta name="theme-color" content="#12834a">
+
 
     <!-- =====================================================
          GOOGLE FONTS
@@ -120,6 +123,46 @@
         </div>
 
     </header>
+
+
+    <!-- =====================================================
+         SITE SEARCH
+         ===================================================== -->
+
+    <div class="site-search-wrap" id="siteSearchWrap">
+
+        <form class="site-search" id="siteSearch" role="search">
+
+            <div class="site-search-logo" aria-hidden="true">
+                <img src="assets/logo.png" alt="">
+            </div>
+
+            <label class="sr-only" for="siteSearchInput">Search AgriSense</label>
+
+            <input
+                type="search"
+                id="siteSearchInput"
+                placeholder="Search AgriSense, workflow, team, AI, sustainability..."
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+            <button type="submit" class="site-search-btn">
+                <span aria-hidden="true">⌕</span>
+                Search
+            </button>
+
+        </form>
+
+        <div
+            class="search-results"
+            id="searchResults"
+            role="status"
+            aria-live="polite"
+            aria-hidden="true"
+        ></div>
+
+    </div>
 
 
 
@@ -1122,6 +1165,101 @@
     <!-- =====================================================
          JAVASCRIPT
          ===================================================== -->
+
+    <script>
+        (() => {
+            const form = document.getElementById("siteSearch");
+            const input = document.getElementById("siteSearchInput");
+            const results = document.getElementById("searchResults");
+
+            if (!form || !input || !results) return;
+
+            const targets = [
+                { selector: ".intro-section", title: "Smarter Data. Better Crops.", type: "Hero / Agricultural Decision Support" },
+                { selector: ".workflow-section", title: "System Workflow", type: "Farm Data → AI Analysis → Decision Engine → Top 3 Crops" },
+                { selector: ".engine-section", title: "Integrated Intelligence", type: "Multi-factor Decision Engine" },
+                { selector: ".team-section", title: "Research Team", type: "Team AgriSense" }
+            ];
+
+            const teamCards = [...document.querySelectorAll(".team-member")].map(card => ({
+                element: card,
+                title: card.querySelector("h3")?.textContent.trim() || "Team Member",
+                type: card.querySelector(".member-info p")?.textContent.trim() || "Research Team"
+            }));
+
+            const staticTargets = targets.map(item => ({
+                ...item,
+                element: document.querySelector(item.selector)
+            })).filter(item => item.element);
+
+            function render(query) {
+                const q = query.trim().toLowerCase();
+
+                if (!q) {
+                    results.classList.remove("is-open");
+                    results.setAttribute("aria-hidden", "true");
+                    results.innerHTML = "";
+                    return;
+                }
+
+                const all = [...staticTargets, ...teamCards];
+                const matches = all.filter(item =>
+                    `${item.title} ${item.type}`.toLowerCase().includes(q)
+                ).slice(0, 6);
+
+                results.innerHTML = matches.length
+                    ? matches.map((item, i) => `
+                        <button type="button" class="search-result" data-index="${i}">
+                            <span>
+                                <strong>${escapeHtml(item.title)}</strong>
+                                <span>${escapeHtml(item.type)}</span>
+                            </span>
+                            <em>→</em>
+                        </button>
+                    `).join("")
+                    : `<div class="search-empty">No matching AgriSense section found.</div>`;
+
+                results.classList.add("is-open");
+                results.setAttribute("aria-hidden", "false");
+
+                [...results.querySelectorAll(".search-result")].forEach((button, index) => {
+                    button.addEventListener("click", () => {
+                        const target = matches[index].element;
+                        results.classList.remove("is-open");
+                        results.setAttribute("aria-hidden", "true");
+                        input.blur();
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                });
+            }
+
+            function escapeHtml(value) {
+                return value.replace(/[&<>"']/g, char => ({
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#039;"
+                }[char]));
+            }
+
+            input.addEventListener("input", () => render(input.value));
+
+            form.addEventListener("submit", event => {
+                event.preventDefault();
+                render(input.value);
+                const first = results.querySelector(".search-result");
+                if (first) first.focus();
+            });
+
+            document.addEventListener("click", event => {
+                if (!form.contains(event.target) && !results.contains(event.target)) {
+                    results.classList.remove("is-open");
+                    results.setAttribute("aria-hidden", "true");
+                }
+            });
+        })();
+    </script>
 
     <script src="js/app.js"></script>
 

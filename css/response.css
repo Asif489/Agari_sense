@@ -1,1742 +1,373 @@
 /* =========================================================
-   AGRISENSE AI — RESPONSIVE CSS
-   response.css
-   Mobile + Tablet + Small Laptop
+   AGRISENSE AI — LIVE DEMO RESPONSIVE OVERRIDES
    ========================================================= */
 
-
-/* =========================================================
-   LARGE TABLET / SMALL LAPTOP
-   1200px
-   ========================================================= */
-
-@media (max-width: 1200px) {
-
-    .demo-header {
-        width:
-            calc(100% - 36px);
-
-        grid-template-columns:
-            170px
-            1fr
-            120px;
-
-        padding:
-            14px 20px;
-    }
-
-
-    .demo-main {
-        width:
-            calc(100% - 36px);
-    }
-
-
-    .demo-intro {
-        padding:
-            65px 20px 40px;
-    }
-
-
-    .demo-intro h2 {
-        font-size:
-            54px;
-    }
-
-
-    .demo-workspace {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(390px, .85fr);
-
-        padding:
-            0 20px 45px;
-    }
-
-
-    .mini-flow {
-        margin-left:
-            20px;
-
-        margin-right:
-            20px;
-    }
-
-
-    .demo-note {
-        margin-left:
-            20px;
-
-        margin-right:
-            20px;
-    }
-
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
-/* =========================================================
-   TABLET
-   950px
-   ========================================================= */
+img, svg, video, canvas {
+    max-width: 100%;
+}
+
+input, select, textarea, button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.demo-header,
+.demo-main,
+.demo-workspace,
+.input-panel,
+.result-panel,
+.farm-form,
+.result-content {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.crop-main,
+.crop-result-info,
+.panel-heading > div,
+.result-heading > div,
+.derived-note > div:last-child,
+.asi-generated > div:last-child,
+.explanation-box > div:last-child,
+.demo-note > div:last-child {
+    min-width: 0;
+}
+
+.crop-main h4,
+.crop-main p,
+.crop-result-info h4,
+.crop-result-info p,
+.demo-title h1,
+.demo-intro h2,
+.demo-intro p,
+.derived-note strong,
+.derived-note p,
+.asi-generated strong,
+.asi-generated p,
+.explanation-box p,
+.demo-note p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
 @media (max-width: 950px) {
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .demo-header {
-
-        width:
-            calc(100% - 28px);
-
-        min-height:
-            88px;
-
-        grid-template-columns:
-            150px
-            1fr
-            100px;
-
-        gap:
-            15px;
-
-        padding:
-            12px 17px;
-
-        border-radius:
-            18px;
-    }
-
-
-    .demo-brand img {
-
-        width:
-            130px;
-
-        height:
-            55px;
-    }
-
-
-    .demo-title h1 {
-
-        font-size:
-            22px;
-    }
-
-
-    .demo-title > span {
-
-        font-size:
-            9px;
-    }
-
-
-    .back-btn {
-
-        min-height:
-            42px;
-
-        padding:
-            0 13px;
-
-        font-size:
-            11px;
-    }
-
-
-    /* -----------------------------------------------------
-       MAIN
-       ----------------------------------------------------- */
-
+    .demo-header,
     .demo-main {
-
-        width:
-            calc(100% - 28px);
+        width: calc(100% - 28px);
     }
-
-
-    /* -----------------------------------------------------
-       INTRO
-       ----------------------------------------------------- */
-
-    .demo-intro {
-
-        padding:
-            60px 15px 35px;
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-
-        gap:
-            25px;
-    }
-
-
-    .demo-intro h2 {
-
-        max-width:
-            700px;
-
-        font-size:
-            50px;
-    }
-
-
-    .demo-intro p {
-
-        max-width:
-            680px;
-
-        font-size:
-            14px;
-    }
-
-
-    /* -----------------------------------------------------
-       FLOW
-       ----------------------------------------------------- */
-
-    .mini-flow {
-
-        margin:
-            0 15px 30px;
-
-        padding:
-            14px 15px;
-
-        gap:
-            13px;
-
-        overflow-x:
-            auto;
-
-        justify-content:
-            flex-start;
-    }
-
-
-    .flow-line {
-        width:
-            35px;
-
-        flex-shrink:
-            0;
-    }
-
-
-    .flow-item {
-        flex-shrink:
-            0;
-    }
-
-
-    /* -----------------------------------------------------
-       WORKSPACE
-       ----------------------------------------------------- */
 
     .demo-workspace {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            25px;
-
-        padding:
-            0 15px 40px;
+        grid-template-columns: 1fr;
     }
-
-
-    /* IMPORTANT
-       Result should NOT remain sticky
-    */
-
-    .result-panel {
-
-        position:
-            relative;
-
-        top:
-            auto;
-    }
-
-
-    /* -----------------------------------------------------
-       FORM GRID
-       ----------------------------------------------------- */
-
-    .form-grid.three {
-
-        grid-template-columns:
-            repeat(2, minmax(0,1fr));
-    }
-
-
-    /* -----------------------------------------------------
-       RESULT
-       ----------------------------------------------------- */
-
-    .empty-result,
-    .loading-state {
-
-        min-height:
-            430px;
-    }
-
-
-    /* -----------------------------------------------------
-       NOTE
-       ----------------------------------------------------- */
-
-    .demo-note {
-
-        margin:
-            0 15px 60px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   700px
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-
-    /* -----------------------------------------------------
-       BODY
-       ----------------------------------------------------- */
-
-    body {
-        overflow-x:
-            hidden;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .demo-header {
-
-        width:
-            calc(100% - 22px);
-
-        min-height:
-            auto;
-
-        margin-top:
-            11px;
-
-        padding:
-            12px 14px;
-
-        display:
-            grid;
-
-        grid-template-columns:
-            1fr auto;
-
-        gap:
-            10px;
-
-        border-radius:
-            17px;
-    }
-
-
-    .demo-brand img {
-
-        width:
-            115px;
-
-        height:
-            48px;
-    }
-
-
-    .demo-title {
-
-        grid-column:
-            1 / -1;
-
-        grid-row:
-            2;
-
-        order:
-            3;
-
-        text-align:
-            left;
-
-        padding:
-            7px 2px 2px;
-
-        border-top:
-            1px solid #edf2ee;
-    }
-
-
-    .demo-title > span {
-
-        margin-bottom:
-            4px;
-
-        font-size:
-            8px;
-    }
-
-
-    .demo-title h1 {
-
-        font-size:
-            18px;
-
-        line-height:
-            1.2;
-    }
-
-
-    .back-btn {
-
-        justify-self:
-            end;
-
-        min-height:
-            39px;
-
-        padding:
-            0 13px;
-
-        font-size:
-            10px;
-    }
-
-
-    /* -----------------------------------------------------
-       MAIN
-       ----------------------------------------------------- */
-
-    .demo-main {
-
-        width:
-            calc(100% - 22px);
-    }
-
-
-    /* -----------------------------------------------------
-       INTRO
-       ----------------------------------------------------- */
-
-    .demo-intro {
-
-        padding:
-            45px 8px 28px;
-
-        gap:
-            19px;
-    }
-
-
-    .demo-label {
-
-        font-size:
-            9px;
-
-        letter-spacing:
-            .17em;
-    }
-
-
-    .demo-label::before {
-
-        width:
-            23px;
-    }
-
-
-    .demo-intro h2 {
-
-        margin-top:
-            12px;
-
-        font-size:
-            clamp(39px, 11vw, 53px);
-
-        line-height:
-            1.01;
-    }
-
-
-    .demo-intro p {
-
-        margin-top:
-            17px;
-
-        font-size:
-            12px;
-
-        line-height:
-            1.75;
-    }
-
-
-    .demo-status {
-
-        min-width:
-            auto;
-
-        padding:
-            10px 14px;
-
-        font-size:
-            8px;
-    }
-
-
-    /* -----------------------------------------------------
-       FLOW
-       ----------------------------------------------------- */
-
-    .mini-flow {
-
-        margin:
-            0 8px 23px;
-
-        padding:
-            11px 12px;
-
-        gap:
-            11px;
-
-        border-radius:
-            13px;
-
-        scrollbar-width:
-            none;
-    }
-
-
-    .mini-flow::-webkit-scrollbar {
-        display:
-            none;
-    }
-
-
-    .flow-item {
-
-        gap:
-            7px;
-    }
-
-
-    .flow-item span {
-
-        width:
-            26px;
-
-        height:
-            26px;
-
-        font-size:
-            8px;
-    }
-
-
-    .flow-item strong {
-
-        font-size:
-            9px;
-    }
-
-
-    .flow-line {
-
-        width:
-            22px;
-    }
-
-
-    /* -----------------------------------------------------
-       WORKSPACE
-       ----------------------------------------------------- */
-
-    .demo-workspace {
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        gap:
-            18px;
-
-        padding:
-            0 8px 30px;
-    }
-
 
     .input-panel,
     .result-panel {
-
-        width:
-            100%;
-
-        border-radius:
-            19px;
+        width: 100%;
     }
 
+    .form-grid.three {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
 
-    /* -----------------------------------------------------
-       PANEL HEADER
-       ----------------------------------------------------- */
+    .result-panel {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .demo-header {
+        width: calc(100% - 20px);
+        min-height: 0;
+        margin: 10px auto 0;
+        padding: 14px 11px;
+
+        display: grid;
+        grid-template-columns: 78px minmax(0,1fr) 82px;
+        align-items: center;
+        gap: 7px;
+
+        overflow: hidden;
+        border-radius: 17px;
+    }
+
+    .demo-brand {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .demo-brand img {
+        width: 72px;
+        height: auto;
+    }
+
+    .demo-title {
+        grid-column: auto;
+        grid-row: 1;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+    }
+
+    .demo-title > span {
+        margin-bottom: 5px;
+        font-size: 6px;
+        letter-spacing: .17em;
+    }
+
+    .demo-title h1 {
+        margin: 0;
+        font-size: clamp(14px, 4.1vw, 19px);
+        line-height: 1.13;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .back-btn {
+        grid-column: auto;
+        grid-row: 1;
+        justify-self: center;
+        width: 82px;
+        min-width: 0;
+        min-height: 36px;
+        padding: 0 6px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .demo-main {
+        width: calc(100% - 20px);
+        padding: 38px 0 50px;
+    }
+
+    .demo-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+        margin-bottom: 23px;
+    }
+
+    .demo-intro h2 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(38px, 11vw, 52px);
+        line-height: .99;
+        letter-spacing: -.055em;
+    }
+
+    .demo-intro p {
+        max-width: 100%;
+        margin-top: 14px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .demo-status {
+        width: auto;
+        max-width: 100%;
+        padding: 9px 12px;
+        font-size: 8px;
+    }
+
+    .mini-flow {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 20px;
+        padding: 10px;
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .mini-flow::-webkit-scrollbar {
+        display: none;
+    }
+
+    .flow-item,
+    .flow-line {
+        flex-shrink: 0;
+    }
+
+    .flow-item strong {
+        font-size: 8px;
+    }
+
+    .demo-workspace {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        padding: 0;
+    }
+
+    .input-panel,
+    .result-panel {
+        width: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+    }
 
     .panel-heading,
     .result-heading {
-
-        min-height:
-            82px;
-
-        padding:
-            18px 18px;
+        min-height: 76px;
+        padding: 16px;
+        gap: 9px;
     }
-
-
-    .panel-heading > div:first-child > span,
-    .result-heading > div:first-child > span {
-
-        font-size:
-            8px;
-    }
-
 
     .panel-heading h3,
     .result-heading h3 {
-
-        margin-top:
-            5px;
-
-        font-size:
-            18px;
+        font-size: 17px;
     }
-
 
     .panel-icon {
-
-        width:
-            41px;
-
-        height:
-            41px;
-
-        border-radius:
-            11px;
-
-        font-size:
-            20px;
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
     }
-
-
-    /* -----------------------------------------------------
-       FORM
-       ----------------------------------------------------- */
 
     .farm-form {
-
-        padding:
-            20px 18px;
+        padding: 18px 15px;
     }
-
-
-    .form-section {
-
-        padding-bottom:
-            22px;
-
-        margin-bottom:
-            22px;
-    }
-
-
-    .form-section-title {
-
-        margin-bottom:
-            15px;
-
-        gap:
-            8px;
-
-        font-size:
-            12px;
-    }
-
-
-    .form-section-title span {
-
-        width:
-            27px;
-
-        height:
-            27px;
-
-        font-size:
-            8px;
-    }
-
-
-    /* -----------------------------------------------------
-       FORM GRID
-       ----------------------------------------------------- */
 
     .form-grid,
     .form-grid.three {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            14px;
+        grid-template-columns: minmax(0,1fr);
+        gap: 12px;
     }
 
-
-    /* -----------------------------------------------------
-       LABEL
-       ----------------------------------------------------- */
-
-    .input-group label {
-
-        margin-bottom:
-            7px;
-
-        font-size:
-            11px;
+    .input-group,
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        width: 100%;
+        min-width: 0;
     }
-
-
-    .input-group label small {
-
-        font-size:
-            8px;
-    }
-
-
-    /* -----------------------------------------------------
-       INPUT
-       ----------------------------------------------------- */
 
     .input-group input,
     .input-group select {
-
-        height:
-            48px;
-
-        padding:
-            0 13px;
-
-        border-radius:
-            10px;
-
-        font-size:
-            12px;
+        height: 46px;
+        padding: 0 12px;
+        font-size: 12px;
     }
-
-
-    .input-group input::placeholder {
-
-        font-size:
-            11px;
-    }
-
-
-    .input-unit input {
-
-        padding-right:
-            58px;
-    }
-
-
-    .input-unit > span {
-
-        right:
-            12px;
-
-        font-size:
-            8px;
-    }
-
-
-    /* -----------------------------------------------------
-       DERIVED NOTE
-       ----------------------------------------------------- */
-
-    .derived-note {
-
-        grid-template-columns:
-            36px 1fr;
-
-        gap:
-            10px;
-
-        padding:
-            14px;
-
-        border-radius:
-            13px;
-    }
-
-
-    .derived-icon {
-
-        width:
-            34px;
-
-        height:
-            34px;
-
-        font-size:
-            14px;
-    }
-
-
-    .derived-note strong {
-
-        font-size:
-            10px;
-    }
-
-
-    .derived-note p {
-
-        margin-top:
-            4px;
-
-        font-size:
-            9px;
-
-        line-height:
-            1.55;
-    }
-
-
-    /* -----------------------------------------------------
-       FORM BUTTONS
-       ----------------------------------------------------- */
 
     .form-actions {
-
-        padding-top:
-            18px;
-
-        display:
-            grid;
-
-        grid-template-columns:
-            90px 1fr;
-
-        gap:
-            9px;
+        grid-template-columns: minmax(75px,90px) minmax(0,1fr);
+        gap: 8px;
     }
-
-
-    .clear-btn {
-
-        width:
-            100%;
-
-        height:
-            47px;
-
-        padding:
-            0;
-
-        font-size:
-            11px;
-    }
-
-
-    .predict-btn {
-
-        width:
-            100%;
-
-        min-width:
-            0;
-
-        height:
-            47px;
-
-        padding:
-            0 14px;
-
-        font-size:
-            11px;
-    }
-
-
-    .predict-btn b {
-
-        font-size:
-            17px;
-    }
-
-
-    /* -----------------------------------------------------
-       EMPTY RESULT
-       ----------------------------------------------------- */
-
-    .empty-result {
-
-        min-height:
-            390px;
-
-        padding:
-            40px 22px;
-    }
-
-
-    .empty-icon {
-
-        width:
-            75px;
-
-        height:
-            75px;
-
-        border-radius:
-            23px;
-
-        font-size:
-            34px;
-    }
-
-
-    .empty-result h4 {
-
-        margin-top:
-            20px;
-
-        font-size:
-            18px;
-    }
-
-
-    .empty-result p {
-
-        max-width:
-            320px;
-
-        margin-top:
-            9px;
-
-        font-size:
-            10px;
-
-        line-height:
-            1.75;
-    }
-
-
-    /* -----------------------------------------------------
-       LOADING
-       ----------------------------------------------------- */
-
-    .loading-state {
-
-        min-height:
-            390px;
-
-        padding:
-            40px 22px;
-    }
-
-
-    .loader {
-
-        width:
-            52px;
-
-        height:
-            52px;
-    }
-
-
-    .loading-state strong {
-
-        margin-top:
-            18px;
-
-        font-size:
-            15px;
-    }
-
-
-    .loading-state p {
-
-        max-width:
-            300px;
-
-        font-size:
-            10px;
-    }
-
-
-    /* -----------------------------------------------------
-       RESULT CONTENT
-       ----------------------------------------------------- */
-
-    .result-content {
-
-        padding:
-            17px;
-    }
-
-
-    /* -----------------------------------------------------
-       TOP CROP
-       ----------------------------------------------------- */
-
-    .top-crop {
-
-        min-height:
-            125px;
-
-        padding:
-            15px;
-
-        grid-template-columns:
-            42px 1fr 55px;
-
-        gap:
-            10px;
-
-        border-radius:
-            15px;
-    }
-
-
-    .rank-badge {
-
-        width:
-            39px;
-
-        height:
-            39px;
-
-        border-radius:
-            11px;
-
-        font-size:
-            11px;
-    }
-
-
-    .crop-main > span {
-
-        font-size:
-            7px;
-    }
-
-
-    .crop-main h4 {
-
-        margin-top:
-            4px;
-
-        font-size:
-            20px;
-    }
-
-
-    .crop-main p {
-
-        margin-top:
-            4px;
-
-        font-size:
-            8px;
-
-        line-height:
-            1.5;
-    }
-
-
-    .score strong {
-
-        font-size:
-            18px;
-    }
-
-
-    .score span {
-
-        font-size:
-            7px;
-    }
-
-
-    /* -----------------------------------------------------
-       OTHER CROPS
-       ----------------------------------------------------- */
-
-    .crop-result {
-
-        min-height:
-            70px;
-
-        padding:
-            11px 12px;
-
-        grid-template-columns:
-            32px 1fr 45px;
-
-        gap:
-            9px;
-
-        border-radius:
-            12px;
-    }
-
-
-    .small-rank {
-
-        width:
-            29px;
-
-        height:
-            29px;
-
-        border-radius:
-            8px;
-
-        font-size:
-            8px;
-    }
-
-
-    .crop-result-info h4 {
-
-        font-size:
-            12px;
-    }
-
-
-    .crop-result-info p {
-
-        margin-top:
-            3px;
-
-        font-size:
-            8px;
-
-        line-height:
-            1.45;
-    }
-
-
-    .crop-result > strong {
-
-        font-size:
-            12px;
-    }
-
-
-    /* -----------------------------------------------------
-       ANALYSIS
-       ----------------------------------------------------- */
-
-    .analysis-summary {
-
-        margin-top:
-            15px;
-
-        padding:
-            15px;
-
-        border-radius:
-            13px;
-    }
-
-
-    .summary-heading > span {
-
-        font-size:
-            7px;
-    }
-
-
-    .summary-heading strong {
-
-        margin-top:
-            4px;
-
-        font-size:
-            12px;
-    }
-
-
-    /* -----------------------------------------------------
-       FACTORS
-       ----------------------------------------------------- */
-
-    .factor-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            13px;
-
-        margin-top:
-            16px;
-    }
-
-
-    .factor {
-
-        grid-template-columns:
-            58px 1fr 35px;
-
-        gap:
-            7px;
-    }
-
-
-    .factor > span {
-
-        font-size:
-            9px;
-    }
-
-
-    .factor > strong {
-
-        font-size:
-            9px;
-    }
-
-
-    .factor-bar {
-
-        height:
-            6px;
-    }
-
-
-    /* -----------------------------------------------------
-       ASI
-       ----------------------------------------------------- */
-
-    .asi-generated {
-
-        margin-top:
-            13px;
-
-        padding:
-            14px;
-
-        grid-template-columns:
-            34px 1fr;
-
-        gap:
-            10px;
-
-        border-radius:
-            13px;
-    }
-
-
-    .asi-generated-icon {
-
-        width:
-            32px;
-
-        height:
-            32px;
-
-        font-size:
-            14px;
-    }
-
-
-    .asi-generated span {
-
-        font-size:
-            7px;
-    }
-
-
-    .asi-generated strong {
-
-        margin-top:
-            3px;
-
-        font-size:
-            10px;
-    }
-
-
-    .asi-generated p {
-
-        margin-top:
-            4px;
-
-        font-size:
-            8px;
-
-        line-height:
-            1.55;
-    }
-
-
-    /* -----------------------------------------------------
-       EXPLANATION
-       ----------------------------------------------------- */
-
-    .explanation-box {
-
-        margin-top:
-            13px;
-
-        padding:
-            14px;
-
-        grid-template-columns:
-            32px 1fr;
-
-        gap:
-            10px;
-
-        border-radius:
-            13px;
-    }
-
-
-    .explanation-icon {
-
-        width:
-            30px;
-
-        height:
-            30px;
-
-        font-size:
-            13px;
-    }
-
-
-    .explanation-box span {
-
-        font-size:
-            7px;
-    }
-
-
-    .explanation-box p {
-
-        margin-top:
-            4px;
-
-        font-size:
-            9px;
-
-        line-height:
-            1.6;
-    }
-
-
-    /* -----------------------------------------------------
-       NEW ANALYSIS
-       ----------------------------------------------------- */
-
-    .new-analysis-btn {
-
-        height:
-            44px;
-
-        margin-top:
-            13px;
-
-        border-radius:
-            10px;
-
-        font-size:
-            10px;
-    }
-
-
-    /* -----------------------------------------------------
-       BOTTOM NOTE
-       ----------------------------------------------------- */
-
-    .demo-note {
-
-        margin:
-            0 8px 45px;
-
-        padding:
-            16px;
-
-        gap:
-            10px;
-
-        border-radius:
-            13px;
-    }
-
-
-    .note-icon {
-
-        width:
-            30px;
-
-        height:
-            30px;
-
-        border-radius:
-            8px;
-
-        font-size:
-            12px;
-    }
-
-
-    .demo-note strong {
-
-        font-size:
-            11px;
-    }
-
-
-    .demo-note p {
-
-        margin-top:
-            5px;
-
-        font-size:
-            8px;
-
-        line-height:
-            1.65;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   430px
-   ========================================================= */
-
-@media (max-width: 430px) {
-
-
-    .demo-header {
-
-        width:
-            calc(100% - 16px);
-
-        padding:
-            10px 12px;
-    }
-
-
-    .demo-brand img {
-
-        width:
-            100px;
-
-        height:
-            43px;
-    }
-
-
-    .back-btn {
-
-        min-height:
-            36px;
-
-        padding:
-            0 11px;
-
-        font-size:
-            9px;
-    }
-
-
-    .demo-title h1 {
-
-        font-size:
-            16px;
-    }
-
-
-    .demo-intro {
-
-        padding:
-            38px 6px 24px;
-    }
-
-
-    .demo-intro h2 {
-
-        font-size:
-            38px;
-    }
-
-
-    .demo-intro p {
-
-        font-size:
-            11px;
-    }
-
-
-    .demo-status {
-
-        font-size:
-            7px;
-    }
-
-
-    .mini-flow {
-
-        margin-left:
-            6px;
-
-        margin-right:
-            6px;
-    }
-
-
-    .demo-workspace {
-
-        padding-left:
-            6px;
-
-        padding-right:
-            6px;
-    }
-
-
-    .panel-heading,
-    .result-heading {
-
-        padding:
-            16px;
-    }
-
-
-    .panel-heading h3,
-    .result-heading h3 {
-
-        font-size:
-            16px;
-    }
-
-
-    .farm-form {
-
-        padding:
-            17px 15px;
-    }
-
-
-    .form-section-title {
-
-        font-size:
-            11px;
-    }
-
-
-    .input-group input,
-    .input-group select {
-
-        height:
-            46px;
-
-        font-size:
-            11px;
-    }
-
-
-    .form-actions {
-
-        grid-template-columns:
-            80px 1fr;
-    }
-
-
-    .result-content {
-
-        padding:
-            14px;
-    }
-
-
-    .top-crop {
-
-        grid-template-columns:
-            38px 1fr 48px;
-
-        padding:
-            13px;
-
-        min-height:
-            116px;
-    }
-
-
-    .rank-badge {
-
-        width:
-            35px;
-
-        height:
-            35px;
-    }
-
-
-    .crop-main h4 {
-
-        font-size:
-            18px;
-    }
-
-
-    .crop-main p {
-
-        font-size:
-            7px;
-    }
-
-
-    .score strong {
-
-        font-size:
-            16px;
-    }
-
-
-    .crop-result {
-
-        grid-template-columns:
-            30px 1fr 40px;
-
-        padding:
-            10px;
-    }
-
-
-    .crop-result-info h4 {
-
-        font-size:
-            11px;
-    }
-
-
-    .crop-result-info p {
-
-        font-size:
-            7px;
-    }
-
-
-    .crop-result > strong {
-
-        font-size:
-            11px;
-    }
-
-
-    .factor {
-
-        grid-template-columns:
-            52px 1fr 32px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL DEVICES
-   360px
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-
-    .demo-intro h2 {
-
-        font-size:
-            34px;
-    }
-
-
-    .demo-title h1 {
-
-        font-size:
-            15px;
-    }
-
-
-    .flow-item strong {
-
-        font-size:
-            8px;
-    }
-
-
-    .form-actions {
-
-        grid-template-columns:
-            1fr;
-    }
-
 
     .clear-btn,
     .predict-btn {
-
-        width:
-            100%;
+        width: 100%;
+        min-width: 0;
     }
 
+    .result-content {
+        padding: 15px;
+    }
 
     .top-crop {
-
-        grid-template-columns:
-            35px 1fr;
-
-        gap:
-            9px;
+        width: 100%;
+        grid-template-columns: 40px minmax(0,1fr) 50px;
+        gap: 8px;
+        padding: 13px;
     }
 
+    .crop-result {
+        width: 100%;
+        grid-template-columns: 30px minmax(0,1fr) 42px;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .factor {
+        width: 100%;
+        grid-template-columns: 52px minmax(0,1fr) 32px;
+        gap: 6px;
+    }
+
+    .factor-bar {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .demo-note {
+        width: 100%;
+        margin: 0 0 35px;
+        grid-template-columns: 30px minmax(0,1fr);
+    }
+}
+
+@media (max-width: 430px) {
+    .demo-header {
+        width: calc(100% - 14px);
+        grid-template-columns: 68px minmax(0,1fr) 72px;
+        padding: 11px 8px;
+        gap: 5px;
+    }
+
+    .demo-brand img { width: 63px; }
+    .demo-title h1 { font-size: 13px; }
+    .demo-title > span { font-size: 5.5px; }
+    .back-btn { width: 72px; min-height: 34px; font-size: 7px; }
+    .demo-main { width: calc(100% - 14px); }
+    .demo-intro h2 { font-size: 37px; }
+    .farm-form { padding: 16px 13px; }
+    .result-content { padding: 13px; }
+}
+
+@media (max-width: 360px) {
+    .demo-header {
+        grid-template-columns: 60px minmax(0,1fr) 66px;
+    }
+
+    .demo-brand img { width: 57px; }
+    .demo-title h1 { font-size: 12px; }
+    .back-btn { width: 66px; font-size: 6.5px; }
+
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .top-crop {
+        grid-template-columns: 34px minmax(0,1fr);
+    }
 
     .score {
-
-        grid-column:
-            2;
-
-        text-align:
-            left;
-
-        margin-top:
-            3px;
+        grid-column: 2;
+        text-align: left;
+        margin-top: 2px;
     }
 
-
-    .top-crop::after {
-
-        font-size:
-            80px;
+    .crop-result {
+        grid-template-columns: 28px minmax(0,1fr) 35px;
     }
+}
 
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
 }
